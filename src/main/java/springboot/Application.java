@@ -8,8 +8,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 import org.springframework.web.context.annotation.ApplicationScope;
 import org.springframework.web.context.annotation.SessionScope;
+
+import java.util.List;
+import java.util.Optional;
 
 @SpringBootApplication
 public class Application {
@@ -40,21 +44,45 @@ public class Application {
     }
 
     @Bean
-    CommandLineRunner commandLineRunner(String redBean , String blueBean) {
+    CommandLineRunner commandLineRunner(String redBean , String blueBean, UserService userService) {
         return args -> {
             System.out.println("Hello from CommandLineRunner");
             System.out.println(redBean);
             System.out.println(blueBean);
+            System.out.println(userService.getUsers());
         };
     }
 
     @Bean
-    CommandLineRunner commandLineRunner2(String redBean , String blueBean) {
+    CommandLineRunner commandLineRunner2(String redBean , String blueBean, UserService userService) {
         return args -> {
             System.out.println("Hello from CommandLineRunner");
             System.out.println(redBean);
             System.out.println(blueBean);
+            System.out.println(userService.getUserById(2));
+            System.out.println(userService.getUserById(3));
         };
+    }
+
+    public record User(int id, String name) {}
+
+    @Component
+    public class UserService {
+
+       public List<User> getUsers() {
+            return List.of(
+                    new User(1, "John Doe"),
+                    new User(2, "Alex Smith")
+            );
+        }
+
+        public Optional<User> getUserById(int id) {
+           return getUsers().stream()
+                   .filter(u -> u.id == id)
+                   .findFirst();
+
+        }
+
     }
 
 }
