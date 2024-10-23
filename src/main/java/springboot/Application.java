@@ -9,6 +9,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.web.context.annotation.ApplicationScope;
 import org.springframework.web.context.annotation.SessionScope;
 
@@ -66,7 +67,7 @@ public class Application {
 
     public record User(int id, String name) {}
 
-    @Component
+    @Service
     public class UserService {
 
        public List<User> getUsers() {
