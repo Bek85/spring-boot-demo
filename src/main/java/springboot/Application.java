@@ -1,5 +1,7 @@
 package springboot;
 
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -45,7 +47,7 @@ public class Application {
     }
 
     @Bean
-    CommandLineRunner commandLineRunner(String redBean , String blueBean, UserService userService) {
+    CommandLineRunner commandLineRunner(String redBean, String blueBean, UserService userService) {
         return args -> {
             System.out.println("Hello from CommandLineRunner");
             System.out.println(redBean);
@@ -55,7 +57,7 @@ public class Application {
     }
 
     @Bean
-    CommandLineRunner commandLineRunner2(String redBean , String blueBean, UserService userService) {
+    CommandLineRunner commandLineRunner2(String redBean, String blueBean, UserService userService) {
         return args -> {
             System.out.println("Hello from CommandLineRunner");
             System.out.println(redBean);
@@ -65,12 +67,17 @@ public class Application {
         };
     }
 
-    public record User(int id, String name) {}
+    public record User(int id, String name) {
+    }
 
     @Service
     public class UserService {
 
-       public List<User> getUsers() {
+        public UserService() {
+            System.out.println("User Service Constructor");
+        }
+
+        public List<User> getUsers() {
             return List.of(
                     new User(1, "John Doe"),
                     new User(2, "Alex Smith")
@@ -78,11 +85,22 @@ public class Application {
         }
 
         public Optional<User> getUserById(int id) {
-           return getUsers().stream()
-                   .filter(u -> u.id == id)
-                   .findFirst();
+            return getUsers().stream()
+                    .filter(u -> u.id == id)
+                    .findFirst();
 
         }
+
+        @PostConstruct
+        public void init() {
+            System.out.println("Fill redis cache");
+        }
+
+        @PreDestroy
+        public void destroy() {
+            System.out.println("Clear redis cache");
+        }
+
 
     }
 
