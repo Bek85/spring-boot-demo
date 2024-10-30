@@ -13,6 +13,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.annotation.ApplicationScope;
 import org.springframework.web.context.annotation.SessionScope;
@@ -54,6 +55,13 @@ public class Application {
     @GetMapping("/people")
     public List<Person> getPersons() {
         return people;
+    }
+
+    @GetMapping("/people/{id}")
+    public Optional<Person> getPersonById(@PathVariable("id") Integer id) {
+        return people.stream()
+                .filter(person -> person.id == id)
+                .findFirst();
     }
 
     @Bean() // By default, Bean objects are Singletons
