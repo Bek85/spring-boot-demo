@@ -31,6 +31,7 @@ public class Application {
         }
 
         System.out.println(beanDefinitionNames.length);
+        System.out.println("Hello World!!!");
     }
 
     @Bean() // By default, Bean objects are Singletons
