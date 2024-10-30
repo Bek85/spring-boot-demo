@@ -12,10 +12,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.annotation.ApplicationScope;
 import org.springframework.web.context.annotation.SessionScope;
 
@@ -83,6 +80,11 @@ public class Application {
         return people.stream()
                 .filter(person -> person.id == id)
                 .findFirst();
+    }
+
+    @DeleteMapping("/people/{id}")
+    public void deletePersonById(@PathVariable("id") Integer id) {
+        people.removeIf(person -> person.id == id);
     }
 
     @Bean() // By default, Bean objects are Singletons
