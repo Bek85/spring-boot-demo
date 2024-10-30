@@ -24,6 +24,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
 @RestController
+@RequestMapping("/api/v1/people")
 @SpringBootApplication
 public class Application {
 
@@ -58,7 +59,7 @@ public class Application {
         people.add(new Person(idCounter.incrementAndGet(), "Alice", 26, Gender.FEMALE));
     }
 
-    @GetMapping("/people")
+    @GetMapping()
     public List<Person> getPersons(@RequestParam(
             value = "sort",
             required = false,
@@ -78,19 +79,19 @@ public class Application {
                 .collect(Collectors.toList());
     }
 
-    @PostMapping("/people")
+    @PostMapping()
     public void addPerson(@RequestBody Person person) {
         people.add(new Person(idCounter.incrementAndGet(), person.name, person.age, person.gender));
     }
 
-    @GetMapping("/people/{id}")
+    @GetMapping("{id}")
     public Optional<Person> getPersonById(@PathVariable("id") Integer id) {
         return people.stream()
                 .filter(person -> person.id.equals(id))
                 .findFirst();
     }
 
-    @DeleteMapping("/people/{id}")
+    @DeleteMapping("{id}")
     public void deletePersonById(@PathVariable("id") Integer id) {
         people.removeIf(person -> person.id.equals(id));
     }
@@ -102,7 +103,7 @@ public class Application {
 
     }
 
-    @PutMapping("/people/{id}")
+    @PutMapping("{id}")
     public void updatePerson(@PathVariable("id") Integer id, @RequestBody PersonUpdateRequest request) {
         // find person by id
         people.stream()
