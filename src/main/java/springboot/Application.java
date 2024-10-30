@@ -20,6 +20,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
 @RestController
@@ -46,13 +47,15 @@ public class Application {
     public record Person(int id, String name, int age, Gender gender) {
     }
 
+    private static AtomicInteger idCounter = new AtomicInteger(0);
+
     public static List<Person> people = new ArrayList<>();
 
     static {
-        people.add(new Person(1, "John", 20, Gender.MALE));
-        people.add(new Person(2, "Jane", 22, Gender.FEMALE));
-        people.add(new Person(3, "Bob", 24, Gender.MALE));
-        people.add(new Person(4, "Alice", 26, Gender.FEMALE));
+        people.add(new Person(idCounter.incrementAndGet(), "John", 20, Gender.MALE));
+        people.add(new Person(idCounter.incrementAndGet(), "Jane", 22, Gender.FEMALE));
+        people.add(new Person(idCounter.incrementAndGet(), "Bob", 24, Gender.MALE));
+        people.add(new Person(idCounter.incrementAndGet(), "Alice", 26, Gender.FEMALE));
     }
 
     @GetMapping("/people")
@@ -75,6 +78,11 @@ public class Application {
                 .collect(Collectors.toList());
     }
 
+    @PostMapping("/people")
+    public void addPerson(@RequestBody Person person) {
+        people.add(new Person(idCounter.incrementAndGet(), person.name, person.age, person.gender));
+    }
+
     @GetMapping("/people/{id}")
     public Optional<Person> getPersonById(@PathVariable("id") Integer id) {
         return people.stream()
@@ -86,6 +94,8 @@ public class Application {
     public void deletePersonById(@PathVariable("id") Integer id) {
         people.removeIf(person -> person.id == id);
     }
+
+
 
     @Bean() // By default, Bean objects are Singletons
 //    @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE) // Can be changed from singleton to other
