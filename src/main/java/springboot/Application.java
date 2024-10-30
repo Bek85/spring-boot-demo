@@ -12,12 +12,16 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.annotation.ApplicationScope;
 import org.springframework.web.context.annotation.SessionScope;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+@RestController
 @SpringBootApplication
 public class Application {
 
@@ -32,6 +36,24 @@ public class Application {
 
         System.out.println(beanDefinitionNames.length);
         System.out.println("Hello World!!!");
+    }
+
+    public enum Gender {MALE, FEMALE}
+
+    public record Person(int id, String name, int age, Gender gender) {}
+
+    public static List<Person> people = new ArrayList<>();
+
+    static {
+        people.add(new Person(1, "John", 20, Gender.MALE));
+        people.add(new Person(2, "Jane", 22, Gender.FEMALE));
+        people.add(new Person(3, "Bob", 24, Gender.MALE));
+        people.add(new Person(4, "Alice", 26, Gender.FEMALE));
+    }
+
+    @GetMapping("/people")
+    public List<Person> getPersons() {
+        return people;
     }
 
     @Bean() // By default, Bean objects are Singletons
