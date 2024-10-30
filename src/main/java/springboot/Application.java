@@ -44,7 +44,7 @@ public class Application {
 
     public enum Sort {ASC, DESC}
 
-    public record Person(int id, String name, int age, Gender gender) {
+    public record Person(Integer id, String name, Integer age, Gender gender) {
     }
 
     private static AtomicInteger idCounter = new AtomicInteger(0);
@@ -86,13 +86,55 @@ public class Application {
     @GetMapping("/people/{id}")
     public Optional<Person> getPersonById(@PathVariable("id") Integer id) {
         return people.stream()
-                .filter(person -> person.id == id)
+                .filter(person -> person.id.equals(id))
                 .findFirst();
     }
 
     @DeleteMapping("/people/{id}")
     public void deletePersonById(@PathVariable("id") Integer id) {
-        people.removeIf(person -> person.id == id);
+        people.removeIf(person -> person.id.equals(id));
+    }
+
+    public record PersonUpdateRequest(
+            String name,
+            Integer age
+    ) {
+
+    }
+
+    @PutMapping("/people/{id}")
+    public void updatePerson(@PathVariable("id") Integer id, @RequestBody PersonUpdateRequest request) {
+        // find person by id
+        people.stream()
+                .filter(p -> p.id.equals(id))
+                .findFirst()
+                .ifPresent(p -> {
+                    var index = people.indexOf(p);
+
+                    if(request.name != null && !request.name.isEmpty() && !request.name.equals(p.name) ) {
+                        Person person = new Person(
+                                p.id,
+                                request.name,
+                                p.age(),
+                                p.gender()
+                        );
+
+                        people.set(index, person);
+                    }
+
+                    if(request.age != null && !request.age.equals(p.age) ) {
+                        Person person = new Person(
+                                p.id,
+                                p.name,
+                                request.age,
+                                p.gender()
+                        );
+
+                        people.set(index, person);
+                    }
+                });
+
+
     }
 
 
