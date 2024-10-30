@@ -1,20 +1,17 @@
-package springboot;
+package com.alex;
 
+import com.alex.person.Gender;
+import com.alex.person.Person;
+import com.alex.person.PersonUpdateRequest;
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.context.annotation.ApplicationScope;
-import org.springframework.web.context.annotation.SessionScope;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -41,13 +38,6 @@ public class Application {
         System.out.println("Hello World!!!");
     }
 
-    public enum Gender {MALE, FEMALE}
-
-    public enum Sort {ASC, DESC}
-
-    public record Person(Integer id, String name, Integer age, Gender gender) {
-    }
-
     private static AtomicInteger idCounter = new AtomicInteger(0);
 
     public static List<Person> people = new ArrayList<>();
@@ -63,13 +53,13 @@ public class Application {
     public List<Person> getPersons(@RequestParam(
             value = "sort",
             required = false,
-            defaultValue = "DESC") Sort sort,
+            defaultValue = "DESC") SortingOrder sort,
                                    @RequestParam(
                                            value = "limit",
                                            required = false,
                                            defaultValue = "10") Integer limit) {
 
-        if (sort == Sort.ASC) {
+        if (sort == SortingOrder.ASC) {
             return people.stream()
                     .sorted(Comparator.comparing(Person::id))
                     .collect(Collectors.toList());
@@ -96,12 +86,6 @@ public class Application {
         people.removeIf(person -> person.id.equals(id));
     }
 
-    public record PersonUpdateRequest(
-            String name,
-            Integer age
-    ) {
-
-    }
 
     @PutMapping("{id}")
     public void updatePerson(@PathVariable("id") Integer id, @RequestBody PersonUpdateRequest request) {
