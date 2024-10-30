@@ -14,13 +14,16 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.annotation.ApplicationScope;
 import org.springframework.web.context.annotation.SessionScope;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @RestController
 @SpringBootApplication
@@ -41,7 +44,10 @@ public class Application {
 
     public enum Gender {MALE, FEMALE}
 
-    public record Person(int id, String name, int age, Gender gender) {}
+    public enum Sort {ASC, DESC}
+
+    public record Person(int id, String name, int age, Gender gender) {
+    }
 
     public static List<Person> people = new ArrayList<>();
 
@@ -53,8 +59,23 @@ public class Application {
     }
 
     @GetMapping("/people")
-    public List<Person> getPersons() {
-        return people;
+    public List<Person> getPersons(@RequestParam(
+            value = "sort",
+            required = false,
+            defaultValue = "DESC") Sort sort,
+                                   @RequestParam(
+                                           value = "limit",
+                                           required = false,
+                                           defaultValue = "10") Integer limit) {
+
+        if (sort == Sort.ASC) {
+            return people.stream()
+                    .sorted(Comparator.comparing(Person::id))
+                    .collect(Collectors.toList());
+        }
+        return people.stream()
+                .sorted(Comparator.comparing(Person::id).reversed())
+                .collect(Collectors.toList());
     }
 
     @GetMapping("/people/{id}")
