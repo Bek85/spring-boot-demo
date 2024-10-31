@@ -1,7 +1,8 @@
 package com.alex;
 
-import com.alex.person.Gender;
 import com.alex.person.Person;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 import org.springframework.boot.CommandLineRunner;
@@ -10,7 +11,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -66,6 +66,17 @@ public class Application {
             System.out.println(blueBean);
             System.out.println(userService.getUserById(2));
             System.out.println(userService.getUserById(3));
+        };
+    }
+
+    @Bean
+    CommandLineRunner commandLineRunner3(ObjectMapper objectMapper) throws JsonProcessingException {
+        String personString = "{\"id\":1,\"name\":\"John Doe\",\"age\":2}";
+        Person person = objectMapper.readValue(personString, Person.class);
+        System.out.println(person);
+        System.out.println(objectMapper.writeValueAsString(person));
+        return args -> {
+
         };
     }
 

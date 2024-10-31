@@ -1,5 +1,6 @@
 package com.alex.person;
 
+import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.Objects;
 
@@ -44,12 +45,11 @@ public class Person {
         return Objects.hash(id, name, age, gender, password);
     }
 
-
-
     public Integer getId() {
         return id;
     }
 
+    @JsonGetter("firstName")
     public String getName() {
         return name;
     }
@@ -64,5 +64,15 @@ public class Person {
 
     public String getPassword() {
         return password;
+    }
+
+    public String getProfile() {
+        return "Person{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", gender=" + gender +
+                ", password='" + password + '\'' +
+                '}';
     }
 }
