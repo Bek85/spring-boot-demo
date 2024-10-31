@@ -16,66 +16,68 @@ public class PersonService {
     public static List<Person> people = new ArrayList<>();
 
     static {
-        people.add(new Person(idCounter.incrementAndGet(), "John", 20, Gender.MALE));
-        people.add(new Person(idCounter.incrementAndGet(), "Jane", 22, Gender.FEMALE));
-        people.add(new Person(idCounter.incrementAndGet(), "Bob", 24, Gender.MALE));
-        people.add(new Person(idCounter.incrementAndGet(), "Alice", 26, Gender.FEMALE));
+        people.add(new Person(idCounter.incrementAndGet(), "John", 20, Gender.MALE, "12345"));
+        people.add(new Person(idCounter.incrementAndGet(), "Jane", 22, Gender.FEMALE, "hello12345"));
+        people.add(new Person(idCounter.incrementAndGet(), "Bob", 24, Gender.MALE, "yoyo12345"));
+        people.add(new Person(idCounter.incrementAndGet(), "Alice", 26, Gender.FEMALE, "qwerty"));
     }
 
     public List<Person> getPeople(SortingOrder sort) {
 
         if (sort == SortingOrder.ASC) {
             return people.stream()
-                    .sorted(Comparator.comparing(Person::id))
+                    .sorted(Comparator.comparing(Person::getId))
                     .collect(Collectors.toList());
         }
         return people.stream()
-                .sorted(Comparator.comparing(Person::id).reversed())
+                .sorted(Comparator.comparing(Person::getId).reversed())
                 .collect(Collectors.toList());
     }
 
     public void addPerson(Person person) {
-        people.add(new Person(idCounter.incrementAndGet(), person.name(), person.age(), person.gender()));
+        people.add(new Person(idCounter.incrementAndGet(), person.getName(), person.getAge(), person.getGender(), person.getPassword()));
     }
 
 
     public Optional<Person> getPersonById(Integer id) {
         return people.stream()
-                .filter(person -> person.id().equals(id))
+                .filter(person -> person.getId().equals(id))
                 .findFirst();
     }
 
 
     public void deletePersonById(Integer id) {
-        people.removeIf(person -> person.id().equals(id));
+        people.removeIf(person -> person.getId().equals(id));
     }
 
 
     public void updatePerson(Integer id, PersonUpdateRequest request) {
 
         people.stream()
-                .filter(p -> p.id().equals(id))
+                .filter(p -> p.getId().equals(id))
                 .findFirst()
                 .ifPresent(p -> {
                     var index = people.indexOf(p);
 
-                    if (request.name() != null && !request.name().isEmpty() && !request.name().equals(p.name())) {
+                    if (request.name() != null && !request.name().isEmpty() && !request.name().equals(p.getName())) {
                         Person person = new Person(
-                                p.id(),
+                                p.getId(),
                                 request.name(),
-                                p.age(),
-                                p.gender()
+                                p.getAge(),
+                                p.getGender(),
+                                p.getPassword()
                         );
 
                         people.set(index, person);
                     }
 
-                    if (request.age() != null && !request.age().equals(p.age())) {
+                    if (request.age() != null && !request.age().equals(p.getAge())) {
                         Person person = new Person(
-                                p.id(),
-                                p.name(),
+                                p.getId(),
+                                p.getName(),
                                 request.age(),
-                                p.gender()
+                                p.getGender(),
+                                p.getPassword()
                         );
 
                         people.set(index, person);
