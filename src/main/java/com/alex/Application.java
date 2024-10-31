@@ -33,7 +33,7 @@ public class Application {
         System.out.println("Hello World!!!");
     }
 
-    private static AtomicInteger idCounter = new AtomicInteger(0);
+    public static AtomicInteger idCounter = new AtomicInteger(0);
 
     public static List<Person> people = new ArrayList<>();
 

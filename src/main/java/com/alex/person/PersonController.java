@@ -1,18 +1,27 @@
 package com.alex.person;
 
 import com.alex.SortingOrder;
+import jakarta.servlet.ServletRequest;
+import jakarta.servlet.ServletResponse;
+import org.springframework.http.HttpMethod;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
+
 
 @RestController
 @RequestMapping("/api/v1/people")
 public class PersonController {
+
+    private final PersonService personService;
+
     @GetMapping()
-    public List<Person> getPersons(@RequestParam(
+    public List<Person> getPeople(
+            HttpMethod httpMethod,
+            ServletRequest request,
+            ServletResponse response,
+            @RequestHeader("Content-Type") String contentType,
+            @RequestParam(
             value = "sort",
             required = false,
             defaultValue = "DESC") SortingOrder sort,
@@ -20,67 +29,32 @@ public class PersonController {
                                            value = "limit",
                                            required = false,
                                            defaultValue = "10") Integer limit) {
+        System.out.println(httpMethod);
+        System.out.println(request.getLocalAddr());
+        System.out.println(response.isCommitted());
+        System.out.println(contentType);
 
-        if (sort == SortingOrder.ASC) {
-            return people.stream()
-                    .sorted(Comparator.comparing(Person::id))
-                    .collect(Collectors.toList());
-        }
-        return people.stream()
-                .sorted(Comparator.comparing(Person::id).reversed())
-                .collect(Collectors.toList());
-    }
-
-    @PostMapping()
-    public void addPerson(@RequestBody Person person) {
-        people.add(new Person(idCounter.incrementAndGet(), person.name, person.age, person.gender));
+        return personService.getPersons(sort);
     }
 
     @GetMapping("{id}")
     public Optional<Person> getPersonById(@PathVariable("id") Integer id) {
-        return people.stream()
-                .filter(person -> person.id.equals(id))
-                .findFirst();
+        return personService.getPersonById(id);
+    }
+
+    @PostMapping()
+    public void addPerson(@RequestBody Person person) {
+        personService.addPerson(person);
     }
 
     @DeleteMapping("{id}")
     public void deletePersonById(@PathVariable("id") Integer id) {
-        people.removeIf(person -> person.id.equals(id));
+         personService.deletePersonById(id);
     }
 
     @PutMapping("{id}")
     public void updatePerson(@PathVariable("id") Integer id, @RequestBody PersonUpdateRequest request) {
-        // find person by id
-        people.stream()
-                .filter(p -> p.id.equals(id))
-                .findFirst()
-                .ifPresent(p -> {
-                    var index = people.indexOf(p);
-
-                    if (request.name != null && !request.name.isEmpty() && !request.name.equals(p.name)) {
-                        Person person = new Person(
-                                p.id,
-                                request.name,
-                                p.age(),
-                                p.gender()
-                        );
-
-                        people.set(index, person);
-                    }
-
-                    if (request.age != null && !request.age.equals(p.age)) {
-                        Person person = new Person(
-                                p.id,
-                                p.name,
-                                request.age,
-                                p.gender()
-                        );
-
-                        people.set(index, person);
-                    }
-                });
-
-
+        personService.updatePerson(id, request);
     }
 
 }
