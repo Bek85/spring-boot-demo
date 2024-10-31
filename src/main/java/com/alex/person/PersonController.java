@@ -4,6 +4,8 @@ import com.alex.SortingOrder;
 import jakarta.servlet.ServletRequest;
 import jakarta.servlet.ServletResponse;
 import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatusCode;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
@@ -38,8 +40,11 @@ public class PersonController {
     }
 
     @GetMapping("{id}")
-    public Optional<Person> getPersonById(@PathVariable("id") Integer id) {
-        return personService.getPersonById(id);
+    public ResponseEntity<Optional<Person>> getPersonById(@PathVariable("id") Integer id) {
+
+        Optional<Person> person = personService.getPersonById(id);
+//        return ResponseEntity.status(200).body(person);
+       return ResponseEntity.ok().body(person);
     }
 
     @PostMapping()
