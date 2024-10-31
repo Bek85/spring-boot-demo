@@ -35,18 +35,6 @@ public class Application {
 
     public static AtomicInteger idCounter = new AtomicInteger(0);
 
-    public static List<Person> people = new ArrayList<>();
-
-    static {
-        people.add(new Person(idCounter.incrementAndGet(), "John", 20, Gender.MALE));
-        people.add(new Person(idCounter.incrementAndGet(), "Jane", 22, Gender.FEMALE));
-        people.add(new Person(idCounter.incrementAndGet(), "Bob", 24, Gender.MALE));
-        people.add(new Person(idCounter.incrementAndGet(), "Alice", 26, Gender.FEMALE));
-    }
-
-
-
-
     @Bean() // By default, Bean objects are Singletons
 //    @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE) // Can be changed from singleton to other
 //    @SessionScope
