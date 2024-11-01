@@ -32,7 +32,7 @@ Content-Type: application/json
 token: "1234"
 
 {
-  "name": "Ben",
+  "name": "Alex",
   "age": 18,
   "gender": "MALE"
 }

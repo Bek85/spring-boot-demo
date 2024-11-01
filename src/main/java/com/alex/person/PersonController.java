@@ -9,7 +9,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
+
+import jakarta.validation.ConstraintViolation;
+import jakarta.validation.ConstraintViolationException;
 import jakarta.validation.Valid;
+import jakarta.validation.Validator;
 import jakarta.validation.constraints.Positive;
 
 @RestController
@@ -17,10 +22,11 @@ import jakarta.validation.constraints.Positive;
 public class PersonController {
 
   private final PersonService personService;
+  private final Validator validator;
 
-  @Autowired
-  public PersonController(PersonService personService) {
+  public PersonController(PersonService personService, Validator validator) {
     this.personService = personService;
+    this.validator = validator;
   }
 
   @GetMapping()
@@ -48,7 +54,16 @@ public class PersonController {
   }
 
   @PostMapping()
-  public ResponseEntity<Person> addPerson(@Valid @RequestBody NewPersonRequest person) {
+  public ResponseEntity<Person> addPerson(@RequestBody NewPersonRequest person) {
+
+    Set<ConstraintViolation<NewPersonRequest>> validate = validator.validate(person);
+
+    validate.forEach(error -> System.out.println(error.getMessage()));
+
+    if (!validate.isEmpty()) {
+      throw new ConstraintViolationException(validate);
+    }
+
     Person createdPerson = personService.addPerson(person);
     return ResponseEntity.status(201).body(createdPerson);
   }
