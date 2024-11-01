@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 import jakarta.validation.Valid;
+import jakarta.validation.constraints.Positive;
 
 @RestController
 @RequestMapping("/api/v1/people")
@@ -39,7 +40,7 @@ public class PersonController {
   }
 
   @GetMapping("{id}")
-  public ResponseEntity<Optional<Person>> getPersonById(@PathVariable("id") Integer id) {
+  public ResponseEntity<Optional<Person>> getPersonById(@Positive @Valid @PathVariable("id") Integer id) {
 
     Optional<Person> person = personService.getPersonById(id);
     // return ResponseEntity.status(200).body(person);
@@ -53,12 +54,12 @@ public class PersonController {
   }
 
   @DeleteMapping("{id}")
-  public void deletePersonById(@PathVariable("id") Integer id) {
+  public void deletePersonById(@Positive @Valid @PathVariable("id") Integer id) {
     personService.deletePersonById(id);
   }
 
   @PutMapping("{id}")
-  public void updatePerson(@PathVariable("id") Integer id, @RequestBody PersonUpdateRequest request) {
+  public void updatePerson(@PathVariable("id") Integer id, @Valid @RequestBody PersonUpdateRequest request) {
     personService.updatePerson(id, request);
   }
 

@@ -21,7 +21,7 @@ Content-Type: application/json
 token: "1234"
 
 ###
-DELETE http://localhost:8081/api/v1/people/4
+DELETE http://localhost:8081/api/v1/people/7
 Content-Type: application/json
 token: "1234"
 
@@ -39,12 +39,13 @@ token: "1234"
 
 
 ###
-PUT http://localhost:8081/api/v1/people/5
+PUT http://localhost:8081/api/v1/people/4
 Content-Type: application/json
 token: "1234"
 
 {
-  "name": "Jahongir"
+  "name": "Alex",
+  "age": 16
 }
 
 ###

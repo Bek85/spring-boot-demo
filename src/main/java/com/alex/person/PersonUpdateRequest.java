@@ -1,5 +1,9 @@
 package com.alex.person;
 
-public record PersonUpdateRequest(String name,
-            Integer age) {
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotEmpty;
+
+public record PersonUpdateRequest(
+    @NotEmpty String name,
+    @Min(16) Integer age) {
 }
