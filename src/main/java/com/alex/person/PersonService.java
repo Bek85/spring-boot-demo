@@ -28,7 +28,7 @@ public class PersonService {
         .collect(Collectors.toList());
   }
 
-  public Person addPerson(Person person) {
+  public Person addPerson(NewPersonRequest person) {
     Person newPerson = new Person(
         personRepository.getIdCounter().incrementAndGet(),
         person.name(),

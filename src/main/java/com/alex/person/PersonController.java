@@ -46,7 +46,7 @@ public class PersonController {
   }
 
   @PostMapping()
-  public ResponseEntity<Person> addPerson(@RequestBody Person person) {
+  public ResponseEntity<Person> addPerson(@RequestBody NewPersonRequest person) {
     Person createdPerson = personService.addPerson(person);
     return ResponseEntity.status(201).body(createdPerson);
   }
