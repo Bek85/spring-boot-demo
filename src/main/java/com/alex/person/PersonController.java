@@ -54,15 +54,16 @@ public class PersonController {
   }
 
   @PostMapping()
-  public ResponseEntity<Person> addPerson(@RequestBody NewPersonRequest person) {
+  public ResponseEntity<Person> addPerson(@Valid @RequestBody NewPersonRequest person) {
 
-    Set<ConstraintViolation<NewPersonRequest>> validate = validator.validate(person);
+    // Set<ConstraintViolation<NewPersonRequest>> validate =
+    // validator.validate(person);
 
-    validate.forEach(error -> System.out.println(error.getMessage()));
+    // validate.forEach(error -> System.out.println(error.getMessage()));
 
-    if (!validate.isEmpty()) {
-      throw new ConstraintViolationException(validate);
-    }
+    // if (!validate.isEmpty()) {
+    // throw new ConstraintViolationException(validate);
+    // }
 
     Person createdPerson = personService.addPerson(person);
     return ResponseEntity.status(201).body(createdPerson);
