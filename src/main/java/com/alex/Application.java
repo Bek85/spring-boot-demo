@@ -33,7 +33,7 @@ public class Application {
         System.out.println("Hello World!!!");
     }
 
-    public static AtomicInteger idCounter = new AtomicInteger(0);
+
 
     @Bean() // By default, Bean objects are Singletons
 //    @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE) // Can be changed from singleton to other
