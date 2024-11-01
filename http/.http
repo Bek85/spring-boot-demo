@@ -1,0 +1,93 @@
+###
+GET http://localhost:8081/api/v1/people
+Content-Type: application/json
+token: "1234"
+
+###
+GET http://localhost:8081/api/v1/people?
+    sort=DESC
+
+###
+GET http://localhost:8081/api/v1/people?
+    sort=DESC&limit=3
+
+###
+GET http://localhost:8081/api/v1/people?
+    sort=ASC
+
+###
+GET http://localhost:8081/api/v1/people/4
+Content-Type: application/json
+token: "1234"
+
+###
+DELETE http://localhost:8081/api/v1/people/4
+Content-Type: application/json
+token: "1234"
+
+
+###
+POST http://localhost:8081/api/v1/people
+Content-Type: application/json
+token: "1234"
+
+{
+  "name": "Ben",
+  "age": 18,
+  "gender": "MALE"
+}
+
+
+###
+PUT http://localhost:8081/api/v1/people/5
+Content-Type: application/json
+token: "1234"
+
+{
+  "name": "Jahongir"
+}
+
+###
+GET http://localhost:8081/api/v1/books
+token: "1234"
+
+
+###
+GET http://localhost:8081/api/v1/books/1
+token: "1234"
+
+###
+GET http://localhost:8081/api/v1/books
+token: "1234"
+
+
+###
+GET http://localhost:8081/api/v1/books/1
+token: "1234"
+
+
+###
+POST http://localhost:8081/api/v1/books
+Content-Type: application/json
+token: "1234"
+
+{
+  "title": "Code",
+  "author": "Microsoft",
+  "year": 2001,
+  "isbn": "341-7542946531"
+}
+
+###
+PUT http://localhost:8081/api/v1/books/5
+Content-Type: application/json
+token: "1234"
+
+{
+  "author": "GitHub"
+}
+
+###
+DELETE http://localhost:8081/api/v1/books/5
+Content-Type: application/json
+token: "1234"

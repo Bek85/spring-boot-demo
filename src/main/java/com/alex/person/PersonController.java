@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/api/v1/people")
@@ -46,7 +47,7 @@ public class PersonController {
   }
 
   @PostMapping()
-  public ResponseEntity<Person> addPerson(@RequestBody NewPersonRequest person) {
+  public ResponseEntity<Person> addPerson(@Valid @RequestBody NewPersonRequest person) {
     Person createdPerson = personService.addPerson(person);
     return ResponseEntity.status(201).body(createdPerson);
   }
