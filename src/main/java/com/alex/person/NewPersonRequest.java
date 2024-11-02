@@ -9,9 +9,9 @@ import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 
 public record NewPersonRequest(
-    @NotEmpty String name,
-    @Min(16) Integer age,
-    @NotNull Gender gender,
-    @Email String email,
+    @NotEmpty(message = "Name is required") String name,
+    @Min(value = 16, message = "Age must be at least 16") Integer age,
+    @NotNull(message = "Gender is required") Gender gender,
+    @Email(message = "Email is invalid") String email,
     @JsonIgnore String password) {
 }
