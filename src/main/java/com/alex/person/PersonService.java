@@ -1,10 +1,10 @@
 package com.alex.person;
 
 import com.alex.SortingOrder;
+import com.alex.exception.ResourceNotFoundException;
 import org.springframework.stereotype.Service;
 import java.util.Comparator;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -43,7 +43,7 @@ public class PersonService {
     return personRepository.getPeople().stream()
         .filter(person -> person.id().equals(id))
         .findFirst()
-        .orElseThrow(() -> new IllegalStateException("Person not found"));
+        .orElseThrow(() -> new ResourceNotFoundException("Person with id " + id + " not found"));
   }
 
   public void deletePersonById(Integer id) {
