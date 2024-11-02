@@ -34,7 +34,8 @@ token: "1234"
 {
   "name": "Alex",
   "age": 16,
-  "gender": "MALE"
+  "gender": "MALE",
+  "email": "alex@gmail.com"
 }
 
 
