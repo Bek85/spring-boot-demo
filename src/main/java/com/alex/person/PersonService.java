@@ -39,10 +39,11 @@ public class PersonService {
     return newPerson;
   }
 
-  public Optional<Person> getPersonById(Integer id) {
+  public Person getPersonById(Integer id) {
     return personRepository.getPeople().stream()
         .filter(person -> person.id().equals(id))
-        .findFirst();
+        .findFirst()
+        .orElseThrow(() -> new IllegalStateException("Person not found"));
   }
 
   public void deletePersonById(Integer id) {

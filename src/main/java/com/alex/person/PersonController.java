@@ -3,16 +3,11 @@ package com.alex.person;
 import com.alex.SortingOrder;
 import jakarta.servlet.ServletRequest;
 import jakarta.servlet.ServletResponse;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
-
-import jakarta.validation.ConstraintViolation;
-import jakarta.validation.ConstraintViolationException;
 import jakarta.validation.Valid;
 import jakarta.validation.Validator;
 import jakarta.validation.constraints.Positive;
@@ -46,9 +41,9 @@ public class PersonController {
   }
 
   @GetMapping("{id}")
-  public ResponseEntity<Optional<Person>> getPersonById(@Positive @Valid @PathVariable("id") Integer id) {
+  public ResponseEntity<Person> getPersonById(@Positive @Valid @PathVariable("id") Integer id) {
 
-    Optional<Person> person = personService.getPersonById(id);
+    Person person = personService.getPersonById(id);
     // return ResponseEntity.status(200).body(person);
     return ResponseEntity.ok().body(person);
   }

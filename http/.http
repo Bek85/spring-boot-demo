@@ -16,7 +16,7 @@ GET http://localhost:8081/api/v1/people?
     sort=ASC
 
 ###
-GET http://localhost:8081/api/v1/people/4
+GET http://localhost:8081/api/v1/people/5
 Content-Type: application/json
 token: "1234"
 
