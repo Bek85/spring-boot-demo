@@ -1,6 +1,7 @@
 package com.alex.person;
 
 import com.alex.SortingOrder;
+import com.alex.exception.DuplicateResourceException;
 import com.alex.exception.ResourceNotFoundException;
 import org.springframework.stereotype.Service;
 import java.util.Comparator;
@@ -33,15 +34,33 @@ public class PersonService {
   }
 
   public Person addPerson(NewPersonRequest person) {
-    Person newPerson = new Person(
-        mockPersonRepository.getIdCounter().incrementAndGet(),
+
+    if (person.email() != null && !person.email().isEmpty()) {
+      boolean existsByEmail = personRepository.existsByEmail(person.email());
+
+      if (existsByEmail) {
+        throw new DuplicateResourceException("Person with email " + person.email() + " already exists");
+      }
+    }
+
+    Person personToAdd = new Person(
         person.name(),
         person.age(),
         person.gender(),
         person.email(),
         person.password());
-    mockPersonRepository.getPeople().add(newPerson);
-    return newPerson;
+
+    return personRepository.save(personToAdd);
+
+    // Person newPerson = new Person(
+    // mockPersonRepository.getIdCounter().incrementAndGet(),
+    // person.name(),
+    // person.age(),
+    // person.gender(),
+    // person.email(),
+    // person.password());
+    // mockPersonRepository.getPeople().add(newPerson);
+    // return newPerson;
   }
 
   public Person getPersonById(Integer id) {

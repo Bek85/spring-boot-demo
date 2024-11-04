@@ -33,9 +33,10 @@ token: "1234"
 
 {
   "name": "Alex",
-  "age": 16,
+  "age": 15,
   "gender": "MALE",
-  "email": "alex@gmail.com"
+  "email": "john.doe@gmail.com",
+  "password": "password123"
 }
 
 

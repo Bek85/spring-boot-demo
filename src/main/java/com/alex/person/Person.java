@@ -40,6 +40,14 @@ public class Person {
     this.password = password;
   }
 
+  public Person(String name, Integer age, Gender gender, String email, String password) {
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
+    this.email = email;
+    this.password = password;
+  }
+
   // Getters and setters
   public Integer getId() {
     return id;
