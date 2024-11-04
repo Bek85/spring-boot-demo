@@ -45,14 +45,25 @@ public class PersonService {
   }
 
   public Person getPersonById(Integer id) {
-    return mockPersonRepository.getPeople().stream()
-        .filter(person -> person.getId().equals(id))
-        .findFirst()
+    return personRepository.findById(id)
         .orElseThrow(() -> new ResourceNotFoundException("Person with id " + id + " not found"));
+    // return mockPersonRepository.getPeople().stream()
+    // .filter(person -> person.getId().equals(id))
+    // .findFirst()
+    // .orElseThrow(() -> new ResourceNotFoundException("Person with id " + id + "
+    // not found"));
   }
 
   public void deletePersonById(Integer id) {
-    mockPersonRepository.getPeople().removeIf(person -> person.getId().equals(id));
+    boolean existsById = personRepository.existsById(id);
+
+    if (!existsById) {
+      throw new ResourceNotFoundException("Person with id " + id + " not found");
+    }
+    personRepository.deleteById(id);
+
+    // mockPersonRepository.getPeople().removeIf(person ->
+    // person.getId().equals(id));
   }
 
   public void updatePerson(Integer id, PersonUpdateRequest request) {
