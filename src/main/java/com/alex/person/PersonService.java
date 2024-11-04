@@ -34,6 +34,7 @@ public class PersonService {
         person.name(),
         person.age(),
         person.gender(),
+        person.email(),
         person.password());
     personRepository.getPeople().add(newPerson);
     return newPerson;
@@ -64,6 +65,7 @@ public class PersonService {
                 request.name(),
                 p.age(),
                 p.gender(),
+                p.email(),
                 p.password());
 
             personRepository.getPeople().set(index, person);
@@ -75,6 +77,7 @@ public class PersonService {
                 p.name(),
                 request.age(),
                 p.gender(),
+                p.email(),
                 p.password());
 
             personRepository.getPeople().set(index, person);
