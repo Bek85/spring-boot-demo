@@ -1,8 +1,10 @@
 package com.alex.book;
 
+import jakarta.validation.constraints.Min;
+
 public record BookUpdateRequest(
     String title,
     String author,
-    Integer year,
+    @Min(1000) Integer year,
     String isbn) {
 }

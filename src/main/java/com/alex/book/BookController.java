@@ -1,10 +1,10 @@
 package com.alex.book;
 
 import com.alex.SortingOrder;
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1/books")
@@ -22,14 +22,14 @@ public class BookController {
   }
 
   @GetMapping("{id}")
-  public ResponseEntity<Optional<Book>> getBookById(@PathVariable("id") Integer id) {
-    Optional<Book> book = bookService.getBookById(id);
+  public ResponseEntity<Book> getBookById(@PathVariable("id") Integer id) {
+    Book book = bookService.getBookById(id);
     return ResponseEntity.ok().body(book);
   }
 
   @PostMapping
-  public ResponseEntity<Book> addBook(@RequestBody Book book) {
-    Book createdBook = bookService.addBook(book);
+  public ResponseEntity<Book> addBook(@Valid @RequestBody NewBookRequest request) {
+    Book createdBook = bookService.addBook(request);
     return ResponseEntity.status(201).body(createdBook);
   }
 
@@ -39,7 +39,9 @@ public class BookController {
   }
 
   @PutMapping("{id}")
-  public void updateBook(@PathVariable("id") Integer id, @RequestBody BookUpdateRequest request) {
+  public void updateBook(
+      @PathVariable("id") Integer id,
+      @Valid @RequestBody BookUpdateRequest request) {
     bookService.updateBook(id, request);
   }
 }

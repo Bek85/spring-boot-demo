@@ -16,12 +16,12 @@ GET http://localhost:8081/api/v1/people?
     sort=ASC
 
 ###
-GET http://localhost:8081/api/v1/people/7
+GET http://localhost:8081/api/v1/people/21
 Content-Type: application/json
 token: "1234"
 
 ###
-DELETE http://localhost:8081/api/v1/people/7
+DELETE http://localhost:8081/api/v1/people/1
 Content-Type: application/json
 token: "1234"
 
@@ -41,13 +41,13 @@ token: "1234"
 
 
 ###
-PUT http://localhost:8081/api/v1/people/1
+PUT http://localhost:8081/api/v1/people/21
 Content-Type: application/json
 token: "1234"
 
 {
   "name": "Alex",
-  "age": 38,
+  "age": 39,
   "email": "stx.webdev@gmail.com"
 }
 
@@ -66,7 +66,7 @@ token: "1234"
 
 
 ###
-GET http://localhost:8081/api/v1/books/1
+GET http://localhost:8081/api/v1/books/5
 token: "1234"
 
 
