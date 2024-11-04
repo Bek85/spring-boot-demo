@@ -20,11 +20,11 @@ public class PersonService {
 
     if (sort == SortingOrder.ASC) {
       return personRepository.getPeople().stream()
-          .sorted(Comparator.comparing(Person::id))
+          .sorted(Comparator.comparing(Person::getId))
           .collect(Collectors.toList());
     }
     return personRepository.getPeople().stream()
-        .sorted(Comparator.comparing(Person::id).reversed())
+        .sorted(Comparator.comparing(Person::getId).reversed())
         .collect(Collectors.toList());
   }
 
@@ -42,43 +42,43 @@ public class PersonService {
 
   public Person getPersonById(Integer id) {
     return personRepository.getPeople().stream()
-        .filter(person -> person.id().equals(id))
+        .filter(person -> person.getId().equals(id))
         .findFirst()
         .orElseThrow(() -> new ResourceNotFoundException("Person with id " + id + " not found"));
   }
 
   public void deletePersonById(Integer id) {
-    personRepository.getPeople().removeIf(person -> person.id().equals(id));
+    personRepository.getPeople().removeIf(person -> person.getId().equals(id));
   }
 
   public void updatePerson(Integer id, PersonUpdateRequest request) {
 
     personRepository.getPeople().stream()
-        .filter(p -> p.id().equals(id))
+        .filter(p -> p.getId().equals(id))
         .findFirst()
         .ifPresent(p -> {
           var index = personRepository.getPeople().indexOf(p);
 
-          if (request.name() != null && !request.name().isEmpty() && !request.name().equals(p.name())) {
+          if (request.name() != null && !request.name().isEmpty() && !request.name().equals(p.getName())) {
             Person person = new Person(
-                p.id(),
+                p.getId(),
                 request.name(),
-                p.age(),
-                p.gender(),
-                p.email(),
-                p.password());
+                p.getAge(),
+                p.getGender(),
+                p.getEmail(),
+                p.getPassword());
 
             personRepository.getPeople().set(index, person);
           }
 
-          if (request.age() != null && !request.age().equals(p.age())) {
+          if (request.age() != null && !request.age().equals(p.getAge())) {
             Person person = new Person(
-                p.id(),
-                p.name(),
+                p.getId(),
+                p.getName(),
                 request.age(),
-                p.gender(),
-                p.email(),
-                p.password());
+                p.getGender(),
+                p.getEmail(),
+                p.getPassword());
 
             personRepository.getPeople().set(index, person);
           }
