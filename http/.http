@@ -95,3 +95,36 @@ token: "1234"
 DELETE http://localhost:8081/api/v1/books/5
 Content-Type: application/json
 token: "1234"
+
+###
+GET http://localhost:8081/api/v1/posts
+Content-Type: application/json
+
+
+###
+GET http://localhost:8081/api/v1/posts/5
+Content-Type: application/json
+
+
+###
+DELETE http://localhost:8081/api/v1/posts/1
+Content-Type: application/json
+
+
+###
+POST http://localhost:8081/api/v1/posts
+Content-Type: application/json
+
+{
+  "title": "foo",
+  "body": "bar",
+  "userId": 1
+}
+
+###
+PUT http://localhost:8081/api/v1/posts/1
+Content-Type: application/json
+
+{
+  "title": "foo"
+}
