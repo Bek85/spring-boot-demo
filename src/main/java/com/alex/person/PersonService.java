@@ -10,54 +10,58 @@ import java.util.stream.Collectors;
 @Service
 public class PersonService {
 
+  private final MockPersonRepository mockPersonRepository;
   private final PersonRepository personRepository;
 
-  public PersonService(PersonRepository personRepository) {
+  public PersonService(MockPersonRepository mockPersonRepository, PersonRepository personRepository) {
+    this.mockPersonRepository = mockPersonRepository;
     this.personRepository = personRepository;
   }
 
-  public List<Person> getPeople(SortingOrder sort) {
+  public List<Person> getPeople() {
 
-    if (sort == SortingOrder.ASC) {
-      return personRepository.getPeople().stream()
-          .sorted(Comparator.comparing(Person::getId))
-          .collect(Collectors.toList());
-    }
-    return personRepository.getPeople().stream()
-        .sorted(Comparator.comparing(Person::getId).reversed())
-        .collect(Collectors.toList());
+    return personRepository.findAll();
+
+    // if (sort == SortingOrder.ASC) {
+    // return mockPersonRepository.getPeople().stream()
+    // .sorted(Comparator.comparing(Person::getId))
+    // .collect(Collectors.toList());
+    // }
+    // return mockPersonRepository.getPeople().stream()
+    // .sorted(Comparator.comparing(Person::getId).reversed())
+    // .collect(Collectors.toList());
   }
 
   public Person addPerson(NewPersonRequest person) {
     Person newPerson = new Person(
-        personRepository.getIdCounter().incrementAndGet(),
+        mockPersonRepository.getIdCounter().incrementAndGet(),
         person.name(),
         person.age(),
         person.gender(),
         person.email(),
         person.password());
-    personRepository.getPeople().add(newPerson);
+    mockPersonRepository.getPeople().add(newPerson);
     return newPerson;
   }
 
   public Person getPersonById(Integer id) {
-    return personRepository.getPeople().stream()
+    return mockPersonRepository.getPeople().stream()
         .filter(person -> person.getId().equals(id))
         .findFirst()
         .orElseThrow(() -> new ResourceNotFoundException("Person with id " + id + " not found"));
   }
 
   public void deletePersonById(Integer id) {
-    personRepository.getPeople().removeIf(person -> person.getId().equals(id));
+    mockPersonRepository.getPeople().removeIf(person -> person.getId().equals(id));
   }
 
   public void updatePerson(Integer id, PersonUpdateRequest request) {
 
-    personRepository.getPeople().stream()
+    mockPersonRepository.getPeople().stream()
         .filter(p -> p.getId().equals(id))
         .findFirst()
         .ifPresent(p -> {
-          var index = personRepository.getPeople().indexOf(p);
+          var index = mockPersonRepository.getPeople().indexOf(p);
 
           if (request.name() != null && !request.name().isEmpty() && !request.name().equals(p.getName())) {
             Person person = new Person(
@@ -68,7 +72,7 @@ public class PersonService {
                 p.getEmail(),
                 p.getPassword());
 
-            personRepository.getPeople().set(index, person);
+            mockPersonRepository.getPeople().set(index, person);
           }
 
           if (request.age() != null && !request.age().equals(p.getAge())) {
@@ -80,7 +84,7 @@ public class PersonService {
                 p.getEmail(),
                 p.getPassword());
 
-            personRepository.getPeople().set(index, person);
+            mockPersonRepository.getPeople().set(index, person);
           }
         });
 

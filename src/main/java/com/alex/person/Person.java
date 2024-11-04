@@ -7,6 +7,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.EnumType;
 
 @Entity
 @Table(name = "person")
@@ -16,6 +18,7 @@ public class Person {
   private Integer id;
   private String name;
   private Integer age;
+  @Enumerated(EnumType.STRING)
   private Gender gender;
   @Email
   private String email;

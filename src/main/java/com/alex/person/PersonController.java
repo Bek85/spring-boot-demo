@@ -36,7 +36,7 @@ public class PersonController {
     System.out.println(response.isCommitted());
     System.out.println(contentType);
 
-    return personService.getPeople(sort);
+    return personService.getPeople();
   }
 
   @GetMapping("{id}")
