@@ -29,14 +29,19 @@ public class PersonController {
       ServletRequest request,
       ServletResponse response,
       @RequestHeader("Content-Type") String contentType,
-      @RequestParam(value = "sort", required = false, defaultValue = "DESC") SortingOrder sort,
+      @RequestParam(value = "sort", required = false) String sortParam,
       @RequestParam(value = "limit", required = false, defaultValue = "10") Integer limit) {
     System.out.println(httpMethod);
     System.out.println(request.getLocalAddr());
     System.out.println(response.isCommitted());
     System.out.println(contentType);
 
-    return personService.getPeople();
+    SortingOrder sort = (sortParam != null)
+        ? SortingOrder.valueOf(sortParam.toUpperCase())
+        : SortingOrder.ASC;
+
+    return personService.getPeople(sort);
+
   }
 
   @GetMapping("{id}")

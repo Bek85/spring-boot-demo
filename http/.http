@@ -4,16 +4,16 @@ Content-Type: application/json
 token: "1234"
 
 ###
-GET http://localhost:8081/api/v1/people?
-    sort=DESC
+GET http://localhost:8081/api/v1/people?sort=DESC
+Content-Type: application/json
 
 ###
-GET http://localhost:8081/api/v1/people?
-    sort=DESC&limit=3
+GET http://localhost:8081/api/v1/people?sort=DESC&limit=3
+Content-Type: application/json
 
 ###
-GET http://localhost:8081/api/v1/people?
-    sort=ASC
+GET http://localhost:8081/api/v1/people?sort=foo
+Content-Type: application/json
 
 ###
 GET http://localhost:8081/api/v1/people/21

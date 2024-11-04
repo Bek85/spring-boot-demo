@@ -3,6 +3,8 @@ package com.alex.person;
 import com.alex.SortingOrder;
 import com.alex.exception.DuplicateResourceException;
 import com.alex.exception.ResourceNotFoundException;
+
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import java.util.Comparator;
 import java.util.List;
@@ -19,9 +21,10 @@ public class PersonService {
     this.personRepository = personRepository;
   }
 
-  public List<Person> getPeople() {
+  public List<Person> getPeople(SortingOrder sort) {
 
-    return personRepository.findAll();
+    return personRepository
+        .findAll(Sort.by(Sort.Direction.valueOf(sort.name()), "id"));
 
     // if (sort == SortingOrder.ASC) {
     // return mockPersonRepository.getPeople().stream()
