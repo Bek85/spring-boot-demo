@@ -33,21 +33,22 @@ token: "1234"
 
 {
   "name": "Alex",
-  "age": 15,
+  "age": 16,
   "gender": "MALE",
-  "email": "john.doe@gmail.com",
+  "email": "alex@gmail.com",
   "password": "password123"
 }
 
 
 ###
-PUT http://localhost:8081/api/v1/people/4
+PUT http://localhost:8081/api/v1/people/1
 Content-Type: application/json
 token: "1234"
 
 {
   "name": "Alex",
-  "age": 16
+  "age": 38,
+  "email": "stx.webdev@gmail.com"
 }
 
 ###

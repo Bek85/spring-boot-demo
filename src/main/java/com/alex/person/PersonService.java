@@ -86,37 +86,32 @@ public class PersonService {
   }
 
   public void updatePerson(Integer id, PersonUpdateRequest request) {
+    Person person = personRepository.findById(id)
+        .orElseThrow(() -> new ResourceNotFoundException(
+            "Person with id " + id + " not found"));
 
-    mockPersonRepository.getPeople().stream()
-        .filter(p -> p.getId().equals(id))
-        .findFirst()
-        .ifPresent(p -> {
-          var index = mockPersonRepository.getPeople().indexOf(p);
+    // Check if email is being updated and if it already exists
+    if (request.email() != null &&
+        !request.email().equals(person.getEmail()) &&
+        personRepository.existsByEmail(request.email())) {
+      throw new DuplicateResourceException(
+          "Email " + request.email() + " is already taken");
+    }
 
-          if (request.name() != null && !request.name().isEmpty() && !request.name().equals(p.getName())) {
-            Person person = new Person(
-                p.getId(),
-                request.name(),
-                p.getAge(),
-                p.getGender(),
-                p.getEmail(),
-                p.getPassword());
+    // Update fields if they are present in the request
+    if (request.name() != null && !request.name().isEmpty()) {
+      person.setName(request.name());
+    }
+    if (request.age() != null) {
+      person.setAge(request.age());
+    }
+    if (request.gender() != null) {
+      person.setGender(request.gender());
+    }
+    if (request.email() != null && !request.email().isEmpty()) {
+      person.setEmail(request.email());
+    }
 
-            mockPersonRepository.getPeople().set(index, person);
-          }
-
-          if (request.age() != null && !request.age().equals(p.getAge())) {
-            Person person = new Person(
-                p.getId(),
-                p.getName(),
-                request.age(),
-                p.getGender(),
-                p.getEmail(),
-                p.getPassword());
-
-            mockPersonRepository.getPeople().set(index, person);
-          }
-        });
-
+    personRepository.save(person);
   }
 }
