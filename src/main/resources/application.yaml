@@ -17,6 +17,7 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+    defer-datasource-initialization: true
 
 server:
   port: 8081
