@@ -16,7 +16,7 @@ GET http://localhost:8081/api/v1/people?sort=foo
 Content-Type: application/json
 
 ###
-GET http://localhost:8081/api/v1/people/21
+GET http://localhost:8081/api/v1/people/20
 Content-Type: application/json
 token: "1234"
 
@@ -52,26 +52,26 @@ token: "1234"
 }
 
 ###
-GET http://localhost:8081/api/v1/books
+GET http://localhost:8081/api/v1/publications
 token: "1234"
 
 
 ###
-GET http://localhost:8081/api/v1/books/1
+GET http://localhost:8081/api/v1/publications/1
 token: "1234"
 
 ###
-GET http://localhost:8081/api/v1/books
-token: "1234"
-
-
-###
-GET http://localhost:8081/api/v1/books/5
+GET http://localhost:8081/api/v1/publications
 token: "1234"
 
 
 ###
-POST http://localhost:8081/api/v1/books
+GET http://localhost:8081/api/v1/publications/5
+token: "1234"
+
+
+###
+POST http://localhost:8081/api/v1/publications
 Content-Type: application/json
 token: "1234"
 
@@ -83,7 +83,7 @@ token: "1234"
 }
 
 ###
-PUT http://localhost:8081/api/v1/books/5
+PUT http://localhost:8081/api/v1/publications/5
 Content-Type: application/json
 token: "1234"
 
@@ -92,7 +92,7 @@ token: "1234"
 }
 
 ###
-DELETE http://localhost:8081/api/v1/books/5
+DELETE http://localhost:8081/api/v1/publications/6
 Content-Type: application/json
 token: "1234"
 

@@ -1,4 +1,4 @@
-package com.alex.book;
+package com.alex.publication;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
@@ -6,8 +6,8 @@ import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Min;
 
 @Entity
-@Table(name = "book")
-public class Book {
+@Table(name = "publication")
+public class Publication {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;
@@ -29,11 +29,11 @@ public class Book {
   private String publisherCode;
 
   // Default constructor needed by JPA
-  public Book() {
+  public Publication() {
   }
 
   // Constructor with id
-  public Book(Integer id, String title, String author, Integer year, String isbn, String publisherCode) {
+  public Publication(Integer id, String title, String author, Integer year, String isbn, String publisherCode) {
     this.id = id;
     this.title = title;
     this.author = author;
@@ -43,7 +43,7 @@ public class Book {
   }
 
   // Constructor without id
-  public Book(String title, String author, Integer year, String isbn, String publisherCode) {
+  public Publication(String title, String author, Integer year, String isbn, String publisherCode) {
     this.title = title;
     this.author = author;
     this.year = year;

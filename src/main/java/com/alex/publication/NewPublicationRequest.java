@@ -1,9 +1,9 @@
-package com.alex.book;
+package com.alex.publication;
 
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
 
-public record NewBookRequest(
+public record NewPublicationRequest(
     @NotEmpty(message = "Title is required") String title,
 
     @NotEmpty(message = "Author is required") String author,

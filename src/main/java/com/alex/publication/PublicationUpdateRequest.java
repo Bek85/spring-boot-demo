@@ -1,8 +1,8 @@
-package com.alex.book;
+package com.alex.publication;
 
 import jakarta.validation.constraints.Min;
 
-public record BookUpdateRequest(
+public record PublicationUpdateRequest(
     String title,
     String author,
     @Min(1000) Integer year,

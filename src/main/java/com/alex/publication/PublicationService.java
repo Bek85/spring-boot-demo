@@ -1,4 +1,4 @@
-package com.alex.book;
+package com.alex.publication;
 
 import com.alex.SortingOrder;
 import com.alex.exception.DuplicateResourceException;
@@ -7,73 +7,73 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class BookService {
-  private final BookRepository bookRepository;
+public class PublicationService {
+  private final PublicationRepository publicationRepository;
 
-  public BookService(BookRepository bookRepository) {
-    this.bookRepository = bookRepository;
+  public PublicationService(PublicationRepository publicationRepository) {
+    this.publicationRepository = publicationRepository;
   }
 
-  public List<Book> getBooks(SortingOrder sort) {
-    return bookRepository.findAll();
+  public List<Publication> getBooks(SortingOrder sort) {
+    return publicationRepository.findAll();
   }
 
-  public Book addBook(NewBookRequest request) {
-    if (bookRepository.existsByIsbn(request.isbn())) {
+  public Publication addBook(NewPublicationRequest request) {
+    if (publicationRepository.existsByIsbn(request.isbn())) {
       throw new DuplicateResourceException(
           "Book with ISBN " + request.isbn() + " already exists");
     }
 
-    Book book = new Book(
+    Publication publication = new Publication(
         request.title(),
         request.author(),
         request.year(),
         request.isbn(),
         request.publisherCode());
 
-    return bookRepository.save(book);
+    return publicationRepository.save(publication);
   }
 
-  public Book getBookById(Integer id) {
-    return bookRepository.findById(id)
+  public Publication getBookById(Integer id) {
+    return publicationRepository.findById(id)
         .orElseThrow(() -> new ResourceNotFoundException(
             "Book with id " + id + " not found"));
   }
 
   public void deleteBookById(Integer id) {
-    if (!bookRepository.existsById(id)) {
+    if (!publicationRepository.existsById(id)) {
       throw new ResourceNotFoundException(
           "Book with id " + id + " not found");
     }
-    bookRepository.deleteById(id);
+    publicationRepository.deleteById(id);
   }
 
-  public void updateBook(Integer id, BookUpdateRequest request) {
-    Book book = bookRepository.findById(id)
+  public void updateBook(Integer id, PublicationUpdateRequest request) {
+    Publication publication = publicationRepository.findById(id)
         .orElseThrow(() -> new ResourceNotFoundException(
             "Book with id " + id + " not found"));
 
     // Check if ISBN is being updated and if it already exists
     if (request.isbn() != null &&
-        !request.isbn().equals(book.getIsbn()) &&
-        bookRepository.existsByIsbn(request.isbn())) {
+        !request.isbn().equals(publication.getIsbn()) &&
+        publicationRepository.existsByIsbn(request.isbn())) {
       throw new DuplicateResourceException(
           "Book with ISBN " + request.isbn() + " already exists");
     }
 
     if (request.title() != null && !request.title().isEmpty()) {
-      book.setTitle(request.title());
+      publication.setTitle(request.title());
     }
     if (request.author() != null && !request.author().isEmpty()) {
-      book.setAuthor(request.author());
+      publication.setAuthor(request.author());
     }
     if (request.year() != null) {
-      book.setYear(request.year());
+      publication.setYear(request.year());
     }
     if (request.isbn() != null && !request.isbn().isEmpty()) {
-      book.setIsbn(request.isbn());
+      publication.setIsbn(request.isbn());
     }
 
-    bookRepository.save(book);
+    publicationRepository.save(publication);
   }
 }

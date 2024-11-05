@@ -7,7 +7,7 @@
 --     password VARCHAR(255) NOT NULL
 -- );
 
--- CREATE TABLE IF NOT EXISTS book (
+-- CREATE TABLE IF NOT EXISTS publication (
 --     id INTEGER PRIMARY KEY AUTO_INCREMENT,
 --     title VARCHAR(255) NOT NULL,
 --     author VARCHAR(255) NOT NULL,
@@ -38,7 +38,7 @@ INSERT INTO person (age, email, gender, name, password) VALUES
 (30, 'jake.taylor@gmail.com', 'MALE', 'Jake', 'jake_pass123'),
 (25, 'chloe.jackson@gmail.com', 'FEMALE', 'Chloe', 'chloe_password');
 
-INSERT INTO book (title, author, publication_year, isbn, publisher_code) VALUES
+INSERT INTO publication (title, author, publication_year, isbn, publisher_code) VALUES
 ('The Great Gatsby', 'F. Scott Fitzgerald', 1925, '9780743273565', 'Penguin Random House'),
 ('To Kill a Mockingbird', 'Harper Lee', 1960, '9780446310789', 'J.B. Lippincott & Co.'),
 ('1984', 'George Orwell', 1949, '9780451524934', 'Signet Classic'),
