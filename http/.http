@@ -159,8 +159,12 @@ POST http://localhost:8081/api/v1/students
 Content-Type: application/json
 
 {
-  "firstName": "John",
-  "lastName": "Doe",
-  "email": "john.doe3@gmail.com",
-  "age": 25
+  "firstName": "Alex",
+  "lastName": "Smith",
+  "email": "stx.webdev@gmail.com",
+  "age": 38
 }
+
+### Get student by ID
+GET http://localhost:8081/api/v1/students/3
+Content-Type: application/json
