@@ -1,7 +1,14 @@
 package com.alex.student;
 
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+
+@Entity(name = "student")
 public class Student {
 
+    @Id
     private Long id;
     private String firstName;
     private String lastName;
