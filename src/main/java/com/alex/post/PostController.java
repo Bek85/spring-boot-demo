@@ -22,30 +22,30 @@ public class PostController {
 
   @GetMapping
   public List<Post> getAllPosts() {
-    return postService.getPosts();
+    return jsonPlaceholderService.getAllPosts();
   }
 
   @GetMapping("{id}")
   public Post getPostById(@PathVariable("id") Integer id) {
-    return postService.fetchPostById(id);
+    return jsonPlaceholderService.getPostById(id);
   }
 
   @DeleteMapping("{id}")
   @ResponseStatus(HttpStatus.NO_CONTENT)
   public void deletePostById(@PathVariable("id") Integer id) {
-    postService.deletePostById(id);
+    jsonPlaceholderService.deletePostById(id);
   }
 
   @PostMapping
   @ResponseStatus(HttpStatus.CREATED)
   public void createPost(@RequestBody Post post) {
-    postService.createPost(post);
+    jsonPlaceholderService.createPost(post);
   }
 
   @PutMapping("{id}")
   public void updatePost(@PathVariable("id") Integer id,
       @RequestBody Post post) {
-    postService.updatePost(id, post);
+    jsonPlaceholderService.updatePost(id, post);
   }
 
 }
