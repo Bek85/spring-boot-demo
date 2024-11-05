@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.server.ResponseStatusException;
 
+import com.alex.exception.ResourceNotFoundException;
+
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -59,6 +61,9 @@ public class PostService {
     return restClient.get()
         .uri("/posts/{id}", id)
         .retrieve()
+        .onStatus(HttpStatusCode::is4xxClientError, (request, response) -> {
+          throw new ResourceNotFoundException("Post not found");
+        })
         .body(Post.class);
   }
 
