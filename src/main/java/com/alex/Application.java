@@ -35,7 +35,13 @@ public class Application {
     // System.out.println("Hello World!!!");
   }
 
-  @Scheduled(fixedRate = 5, timeUnit = TimeUnit.SECONDS)
+  // add cron expression to run the task every 1 minute
+
+  @Scheduled(
+      // fixedRate = 5, timeUnit = TimeUnit.SECONDS
+      // run every 1 minute
+      cron = "0 */1 * * * *")
+
   public void sendEmails() throws InterruptedException {
     System.out.println("Sending emails");
     Thread.sleep(2000);
