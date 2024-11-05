@@ -1,5 +1,6 @@
 package com.alex.student;
 
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,6 +20,11 @@ public class StudentController {
   @Autowired
   public StudentController(StudentService studentService) {
     this.studentService = studentService;
+  }
+
+  @GetMapping
+  public List<Student> getStudents() {
+    return studentService.getStudents();
   }
 
   @PostMapping

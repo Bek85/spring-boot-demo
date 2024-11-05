@@ -154,6 +154,12 @@ GET http://localhost:8081/api/v1/publications/popular?minReaders=3
 Content-Type: application/json
 token: "1234"
 
+
+### Get all students
+GET http://localhost:8081/api/v1/students
+Content-Type: application/json
+
+
 ### Add a new student
 POST http://localhost:8081/api/v1/students
 Content-Type: application/json
