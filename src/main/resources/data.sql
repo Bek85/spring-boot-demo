@@ -83,3 +83,22 @@ INSERT INTO person_read_publications (person_id, publication_id) VALUES
 (4, 2),  -- Sara read "To Kill a Mockingbird"
 (5, 1),  -- David read "The Great Gatsby"
 (3, 4);  -- Mike read "Pride and Prejudice"
+
+
+INSERT INTO student (id ,first_name, last_name, email, age) VALUES
+(1, 'John', 'Doe', 'john.doe@gmail.com', 25),
+(2, 'Jane', 'Smith', 'jane.smith@gmail.com', 30),
+(3, 'Alex', 'Brown', 'alex.brown@gmail.com', 28),
+(4, 'Emily', 'Davis', 'emily.davis@gmail.com', 22),
+(5, 'Michael', 'Wilson', 'michael.wilson@gmail.com', 35),
+(6, 'Olivia', 'Moore', 'olivia.moore@gmail.com', 26),
+(7, 'Daniel', 'Taylor', 'daniel.taylor@gmail.com', 33),
+(8  , 'Sophia', 'Martin', 'sophia.martin@gmail.com', 29),
+(9, 'James', 'Lee', 'james.lee@gmail.com', 31),
+(10, 'Ava', 'Hall', 'ava.hall@gmail.com', 27),
+(11, 'William', 'King', 'william.king@gmail.com', 32),
+(12, 'Isabella', 'Walker', 'isabella.walker@gmail.com', 23),
+(13, 'Ethan', 'Baker', 'ethan.baker@gmail.com', 24),
+(14, 'Mia', 'Lewis', 'mia.lewis@gmail.com', 29),
+(15, 'Benjamin', 'Martin', 'benjamin.martin@gmail.com', 26),
+(16, 'Aria', 'Moore', 'aria.moore@gmail.com', 31);

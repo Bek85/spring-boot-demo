@@ -153,3 +153,14 @@ token: "1234"
 GET http://localhost:8081/api/v1/publications/popular?minReaders=3
 Content-Type: application/json
 token: "1234"
+
+### Add a new student
+POST http://localhost:8081/api/v1/students
+Content-Type: application/json
+
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "john.doe3@gmail.com",
+  "age": 25
+}
