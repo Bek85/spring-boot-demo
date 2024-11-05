@@ -32,4 +32,15 @@ public class StudentService {
         .orElseThrow(() -> new ResourceNotFoundException(
             "Student with id [%s] not found".formatted(id)));
   }
+
+  public List<Student> findStudentsByFirstNameEqualsAndAgeEquals(String firstName, Integer age) {
+    // TODO: throw exception if no students found with given params
+
+    List<Student> students = studentRepository.findStudentsByFirstNameEqualsAndAgeEquals(firstName, age);
+    if (students.isEmpty()) {
+      throw new ResourceNotFoundException(
+          "No students found with first name [%s] and age [%s]".formatted(firstName, age));
+    }
+    return students;
+  }
 }

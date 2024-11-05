@@ -174,3 +174,7 @@ Content-Type: application/json
 ### Get student by ID
 GET http://localhost:8081/api/v1/students/3
 Content-Type: application/json
+
+### Get students by first name and age
+GET http://localhost:8081/api/v1/students/query?firstName=John&age=35
+Content-Type: application/json

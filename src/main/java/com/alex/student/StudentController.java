@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
 @RequestMapping("api/v1/students")
@@ -36,5 +37,12 @@ public class StudentController {
   @GetMapping("{studentId}")
   public Student getStudentById(@PathVariable("studentId") Long id) {
     return studentService.findStudentById(id);
+  }
+
+  @GetMapping("query")
+  public List<Student> getStudentsByFirstNameAndAge(@RequestParam("firstName") String firstName,
+      @RequestParam("age") Integer age) {
+    return studentService.findStudentsByFirstNameEqualsAndAgeEquals(firstName, age);
+
   }
 }
