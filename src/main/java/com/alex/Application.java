@@ -14,6 +14,11 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.scheduling.annotation.Scheduled;
+import java.util.concurrent.TimeUnit;
+
+@EnableScheduling
 @SpringBootApplication
 public class Application {
 
@@ -28,6 +33,13 @@ public class Application {
 
     // System.out.println(beanDefinitionNames.length);
     // System.out.println("Hello World!!!");
+  }
+
+  @Scheduled(fixedRate = 5, timeUnit = TimeUnit.SECONDS)
+  public void sendEmails() throws InterruptedException {
+    System.out.println("Sending emails");
+    Thread.sleep(2000);
+    System.out.println("end sending emails");
   }
 
   // @Bean() // By default, Bean objects are Singletons
