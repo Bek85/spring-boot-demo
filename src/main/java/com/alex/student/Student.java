@@ -2,6 +2,8 @@ package com.alex.student;
 
 import jakarta.persistence.*;
 
+
+
 @Entity(name = "student")
 public class Student {
 
@@ -31,7 +33,11 @@ public class Student {
     this.id = id;
   }
 
-  public Long getId() {
+    public Student() {
+
+    }
+
+    public Long getId() {
     return id;
   }
 
