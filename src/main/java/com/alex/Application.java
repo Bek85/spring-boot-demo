@@ -37,22 +37,22 @@ public class Application {
 
   // add cron expression to run the task every 1 minute
 
-  @Scheduled(
-      // fixedRate = 5, timeUnit = TimeUnit.SECONDS
-      // run every 1 minute
-      cron = "*/5 * * * * *")
-  public void sendEmails() throws InterruptedException {
-    System.out.println("Start sending emails");
-    Thread.sleep(2000);
-    System.out.println("End sending emails");
-  }
-
-  @Scheduled(cron = "*/5 * * * * *")
-  public void generateSalesReport() throws InterruptedException {
-    System.out.println("Start generating sales report");
-    Thread.sleep(5000);
-    System.out.println("End generating sales report");
-  }
+//  @Scheduled(
+//      // fixedRate = 5, timeUnit = TimeUnit.SECONDS
+//      // run every 1 minute
+//      cron = "*/5 * * * * *")
+//  public void sendEmails() throws InterruptedException {
+//    System.out.println("Start sending emails");
+//    Thread.sleep(2000);
+//    System.out.println("End sending emails");
+//  }
+//
+//  @Scheduled(cron = "*/5 * * * * *")
+//  public void generateSalesReport() throws InterruptedException {
+//    System.out.println("Start generating sales report");
+//    Thread.sleep(5000);
+//    System.out.println("End generating sales report");
+//  }
 
   // @Bean() // By default, Bean objects are Singletons
   // @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE) // Can be changed from

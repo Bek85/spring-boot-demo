@@ -6,7 +6,7 @@
 --     name VARCHAR(255) NOT NULL,
 --     password VARCHAR(255) NOT NULL
 -- );
-
+--
 -- CREATE TABLE IF NOT EXISTS publication (
 --     id INTEGER PRIMARY KEY AUTO_INCREMENT,
 --     title VARCHAR(255) NOT NULL,
