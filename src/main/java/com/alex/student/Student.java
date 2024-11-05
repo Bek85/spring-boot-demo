@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 
 
 @Entity(name = "student")
+@Table(name = "student", uniqueConstraints = {@UniqueConstraint(name = "student_email_unique", columnNames = "email")})
 public class Student {
 
   @Id
@@ -19,7 +20,7 @@ public class Student {
   @Column(name = "last_name", nullable = false, columnDefinition = "TEXT")
   private String lastName;
 
-  @Column(name = "email", nullable = false, columnDefinition = "TEXT", unique = true)
+  @Column(name = "email", nullable = false, columnDefinition = "TEXT")
   private String email;
 
   @Column(name = "age", nullable = false)
