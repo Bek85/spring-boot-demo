@@ -14,105 +14,105 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
-
 @SpringBootApplication
 public class Application {
 
-    public static void main(String[] args) {
-        ConfigurableApplicationContext context = SpringApplication.run(Application.class, args);
+  public static void main(String[] args) {
+    ConfigurableApplicationContext context = SpringApplication.run(Application.class, args);
 
-        String[] beanDefinitionNames = context.getBeanDefinitionNames();
+    // String[] beanDefinitionNames = context.getBeanDefinitionNames();
 
-        for (String beanDefinitionName : beanDefinitionNames) {
-//            System.out.println(beanDefinitionName);
-        }
+    // for (String beanDefinitionName : beanDefinitionNames) {
+    // // System.out.println(beanDefinitionName);
+    // }
 
-        System.out.println(beanDefinitionNames.length);
-        System.out.println("Hello World!!!");
-    }
+    // System.out.println(beanDefinitionNames.length);
+    // System.out.println("Hello World!!!");
+  }
 
+  // @Bean() // By default, Bean objects are Singletons
+  // @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE) // Can be changed from
+  // singleton to other
+  // @SessionScope
+  // @ApplicationScope
+  // public String redBean() {
+  // return "Manchester United";
+  // }
 
+  // @Bean
+  // public String blueBean() {
+  // return "Chelsea";
+  // }
 
-    @Bean() // By default, Bean objects are Singletons
-//    @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE) // Can be changed from singleton to other
-//    @SessionScope
-//    @ApplicationScope
-    public String redBean() {
-        return "Manchester United";
-    }
+  // @Bean
+  // CommandLineRunner commandLineRunner(String redBean, String blueBean,
+  // UserService userService) {
+  // return args -> {
+  // System.out.println("Hello from CommandLineRunner");
+  // System.out.println(redBean);
+  // System.out.println(blueBean);
+  // System.out.println(userService.getUsers());
+  // };
+  // }
 
-    @Bean
-    public String blueBean() {
-        return "Chelsea";
-    }
+  // @Bean
+  // CommandLineRunner commandLineRunner2(String redBean, String blueBean,
+  // UserService userService) {
+  // return args -> {
+  // System.out.println("Hello from CommandLineRunner");
+  // System.out.println(redBean);
+  // System.out.println(blueBean);
+  // System.out.println(userService.getUserById(2));
+  // System.out.println(userService.getUserById(3));
+  // };
+  // }
 
-    @Bean
-    CommandLineRunner commandLineRunner(String redBean, String blueBean, UserService userService) {
-        return args -> {
-            System.out.println("Hello from CommandLineRunner");
-            System.out.println(redBean);
-            System.out.println(blueBean);
-            System.out.println(userService.getUsers());
-        };
-    }
+  // @Bean
+  // CommandLineRunner commandLineRunner3(ObjectMapper objectMapper) throws
+  // JsonProcessingException {
+  // String personString = "{\"id\":1,\"name\":\"John Doe\",\"age\":2}";
+  // Person person = objectMapper.readValue(personString, Person.class);
+  // System.out.println(person);
+  // System.out.println(objectMapper.writeValueAsString(person));
+  // return args -> {
 
-    @Bean
-    CommandLineRunner commandLineRunner2(String redBean, String blueBean, UserService userService) {
-        return args -> {
-            System.out.println("Hello from CommandLineRunner");
-            System.out.println(redBean);
-            System.out.println(blueBean);
-            System.out.println(userService.getUserById(2));
-            System.out.println(userService.getUserById(3));
-        };
-    }
+  // };
+  // }
 
-    @Bean
-    CommandLineRunner commandLineRunner3(ObjectMapper objectMapper) throws JsonProcessingException {
-        String personString = "{\"id\":1,\"name\":\"John Doe\",\"age\":2}";
-        Person person = objectMapper.readValue(personString, Person.class);
-        System.out.println(person);
-        System.out.println(objectMapper.writeValueAsString(person));
-        return args -> {
+  // public record User(int id, String name) {
+  // }
 
-        };
-    }
+  // @Service
+  // public class UserService {
 
-    public record User(int id, String name) {
-    }
+  // public UserService() {
+  // System.out.println("User Service Constructor");
+  // }
 
-    @Service
-    public class UserService {
+  // public List<User> getUsers() {
+  // return List.of(
+  // new User(1, "John Doe"),
+  // new User(2, "Alex Smith")
+  // );
+  // }
 
-        public UserService() {
-            System.out.println("User Service Constructor");
-        }
+  // public Optional<User> getUserById(int id) {
+  // return getUsers().stream()
+  // .filter(u -> u.id == id)
+  // .findFirst();
 
-        public List<User> getUsers() {
-            return List.of(
-                    new User(1, "John Doe"),
-                    new User(2, "Alex Smith")
-            );
-        }
+  // }
 
-        public Optional<User> getUserById(int id) {
-            return getUsers().stream()
-                    .filter(u -> u.id == id)
-                    .findFirst();
+  // @PostConstruct
+  // public void init() {
+  // System.out.println("Fill redis cache");
+  // }
 
-        }
+  // @PreDestroy
+  // public void destroy() {
+  // System.out.println("Clear redis cache");
+  // }
 
-        @PostConstruct
-        public void init() {
-            System.out.println("Fill redis cache");
-        }
-
-        @PreDestroy
-        public void destroy() {
-            System.out.println("Clear redis cache");
-        }
-
-
-    }
+  // }
 
 }
