@@ -16,6 +16,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.reactive.function.client.support.WebClientAdapter;
 import org.springframework.web.server.ResponseStatusException;
 import org.springframework.web.service.invoker.HttpServiceProxyFactory;
+import reactor.core.publisher.Mono;
 import reactor.netty.http.client.HttpClient;
 import reactor.netty.resources.ConnectionProvider;
 
@@ -60,6 +61,10 @@ public class JSONPlaceHolderConfig {
     WebClient webClient = WebClient.builder()
         .clientConnector(new ReactorClientHttpConnector(httpClient))
         .baseUrl(BASE_URL)
+        .defaultStatusHandler(HttpStatusCode::isError, clientResponse -> {
+          return Mono.error(new ResponseStatusException(
+              clientResponse.statusCode()));
+        })
         .defaultHeader(HttpHeaders.USER_AGENT, "Spring WebClient")
         .defaultHeader(HttpHeaders.ACCEPT, "application/json")
         .build();
