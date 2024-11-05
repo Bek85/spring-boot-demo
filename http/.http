@@ -128,3 +128,28 @@ Content-Type: application/json
 {
   "title": "foo"
 }
+
+### Get all publications read by person with ID 1
+GET http://localhost:8081/api/v1/people/1/publications
+Content-Type: application/json
+token: "1234"
+
+### Get all people who have read publication with ID 1
+GET http://localhost:8081/api/v1/people/readers/1
+Content-Type: application/json
+token: "1234"
+
+### Get people who have read more than 2 publications
+GET http://localhost:8081/api/v1/people/avid-readers?minBooks=2
+Content-Type: application/json
+token: "1234"
+
+### Get all publications read by person with ID 2
+GET http://localhost:8081/api/v1/publications/read-by/1
+Content-Type: application/json
+token: "1234"
+
+### Get publications that have been read by at least 3 people
+GET http://localhost:8081/api/v1/publications/popular?minReaders=3
+Content-Type: application/json
+token: "1234"

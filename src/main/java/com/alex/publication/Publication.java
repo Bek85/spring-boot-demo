@@ -4,6 +4,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Min;
+import com.alex.person.Person;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "publication")
@@ -27,6 +30,10 @@ public class Publication {
 
   @JsonIgnore
   private String publisherCode;
+
+  @JsonIgnore
+  @ManyToMany(mappedBy = "readPublications")
+  private Set<Person> readers = new HashSet<>();
 
   // Default constructor needed by JPA
   public Publication() {
@@ -98,5 +105,13 @@ public class Publication {
 
   public void setPublisherCode(String publisherCode) {
     this.publisherCode = publisherCode;
+  }
+
+  public Set<Person> getReaders() {
+    return readers;
+  }
+
+  public void setReaders(Set<Person> readers) {
+    this.readers = readers;
   }
 }

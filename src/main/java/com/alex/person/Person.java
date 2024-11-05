@@ -9,6 +9,10 @@ import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.EnumType;
+import com.alex.publication.Publication;
+import java.util.HashSet;
+import java.util.Set;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "person")
@@ -24,6 +28,10 @@ public class Person {
   private String email;
   @JsonIgnore
   private String password;
+
+  @ManyToMany
+  @JoinTable(name = "person_read_publications", joinColumns = @JoinColumn(name = "person_id"), inverseJoinColumns = @JoinColumn(name = "publication_id"))
+  private Set<Publication> readPublications = new HashSet<>();
 
   // Default constructor needed by JPA, that is created by @NoArgsConstructor
   // annotation when used
@@ -95,5 +103,23 @@ public class Person {
 
   public void setPassword(String password) {
     this.password = password;
+  }
+
+  public Set<Publication> getReadPublications() {
+    return readPublications;
+  }
+
+  public void setReadPublications(Set<Publication> readPublications) {
+    this.readPublications = readPublications;
+  }
+
+  public void addReadPublication(Publication publication) {
+    readPublications.add(publication);
+    publication.getReaders().add(this);
+  }
+
+  public void removeReadPublication(Publication publication) {
+    readPublications.remove(publication);
+    publication.getReaders().remove(this);
   }
 }

@@ -1,12 +1,14 @@
 package com.alex.person;
 
 import com.alex.SortingOrder;
+import com.alex.publication.Publication;
 import jakarta.servlet.ServletRequest;
 import jakarta.servlet.ServletResponse;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
+import java.util.Set;
 import jakarta.validation.Valid;
 import jakarta.validation.Validator;
 import jakarta.validation.constraints.Positive;
@@ -17,10 +19,12 @@ public class PersonController {
 
   private final PersonService personService;
   private final Validator validator;
+  private final PersonRepository personRepository;
 
-  public PersonController(PersonService personService, Validator validator) {
+  public PersonController(PersonService personService, Validator validator, PersonRepository personRepository) {
     this.personService = personService;
     this.validator = validator;
+    this.personRepository = personRepository;
   }
 
   @GetMapping()
@@ -76,6 +80,30 @@ public class PersonController {
   @PutMapping("{id}")
   public void updatePerson(@PathVariable("id") Integer id, @Valid @RequestBody PersonUpdateRequest request) {
     personService.updatePerson(id, request);
+  }
+
+  // Get all publications read by a specific person
+  @GetMapping("/{personId}/publications")
+  public ResponseEntity<Set<Publication>> getPersonReadPublications(@PathVariable Integer personId) {
+    Person person = personRepository.findPersonWithPublications(personId);
+    if (person == null) {
+      return ResponseEntity.notFound().build();
+    }
+    return ResponseEntity.ok(person.getReadPublications());
+  }
+
+  // Get all people who have read a specific publication
+  @GetMapping("/readers/{publicationId}")
+  public ResponseEntity<List<Person>> getPeopleWhoReadPublication(@PathVariable Integer publicationId) {
+    List<Person> readers = personRepository.findPeopleWhoReadPublication(publicationId);
+    return ResponseEntity.ok(readers);
+  }
+
+  // Get people who have read more than X publications
+  @GetMapping("/avid-readers")
+  public ResponseEntity<List<Person>> getAvidReaders(@RequestParam(defaultValue = "5") Integer minBooks) {
+    List<Person> avidReaders = personRepository.findPeopleWhoReadMoreThan(minBooks);
+    return ResponseEntity.ok(avidReaders);
   }
 
 }

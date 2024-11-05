@@ -16,6 +16,14 @@
 --     publisher_code VARCHAR(255)
 -- );
 
+-- CREATE TABLE IF NOT EXISTS person_read_publications (
+--     person_id INT,
+--     publication_id INT,
+--     PRIMARY KEY (person_id, publication_id),
+--     FOREIGN KEY (person_id) REFERENCES person(id),
+--     FOREIGN KEY (publication_id) REFERENCES publication(id)
+-- );
+
 INSERT INTO person (age, email, gender, name, password) VALUES
 (25, 'john.doe@gmail.com', 'MALE', 'John', 'password123'),
 (30, 'alice.smith@gmail.com', 'FEMALE', 'Alice', 'alice_pass123'),
@@ -65,3 +73,13 @@ INSERT INTO publication (title, author, publication_year, isbn, publisher_code) 
 ('The Sound and the Fury', 'William Faulkner', 1929, '9780141439518', 'Penguin Classics'),
 ('The Old Man and the Sea', 'Ernest Hemingway', 1952, '9780141439518', 'Penguin Classics'),
 ('Ulysses', 'James Joyce', 1922, '9780141439518', 'Penguin Classics');
+
+INSERT INTO person_read_publications (person_id, publication_id) VALUES
+(1, 1),  -- John read "The Great Gatsby"
+(1, 2),  -- John read "To Kill a Mockingbird"
+(2, 1),  -- Alice read "The Great Gatsby"
+(3, 1),  -- Mike read "The Great Gatsby"
+(2, 3),  -- Alice read "1984"
+(4, 2),  -- Sara read "To Kill a Mockingbird"
+(5, 1),  -- David read "The Great Gatsby"
+(3, 4);  -- Mike read "Pride and Prejudice"
