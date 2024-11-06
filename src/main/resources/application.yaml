@@ -31,7 +31,10 @@ spring:
 #      ddl-auto: update
 #    show-sql: true
 #    defer-datasource-initialization: true
-
+task:
+  scheduling:
+    pool:
+      size: 5
 server:
   port: 8081
   error:
