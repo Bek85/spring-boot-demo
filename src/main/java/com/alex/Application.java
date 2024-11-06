@@ -19,15 +19,31 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.Async;
 import java.util.concurrent.TimeUnit;
+import org.springframework.beans.factory.annotation.Value;
 
 @SpringBootApplication
 @EnableScheduling
 @EnableAsync
 public class Application {
 
+  @Value("${stripe.api-key}")
+  private String stripeApiKey;
+
+  @Value("${stripe.url}")
+  private String stripeUrl;
+
+  @Bean
+  CommandLineRunner commandLineRunner() {
+    System.out.println(stripeApiKey);
+    System.out.println(stripeUrl);
+    return args -> {
+    };
+  }
+
   public static void main(String[] args) {
 
     SpringApplication.run(Application.class, args);
+
     // ConfigurableApplicationContext context =
     // SpringApplication.run(Application.class, args);
 
