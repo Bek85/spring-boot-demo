@@ -44,3 +44,7 @@ server:
     include-binding-errors: always
   servlet:
     context-path: /api/v1
+
+stripe:
+  api-key: foobar
+  url: https://api.stripe.com
