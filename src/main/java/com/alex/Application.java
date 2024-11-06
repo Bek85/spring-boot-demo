@@ -20,6 +20,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.Async;
 import java.util.concurrent.TimeUnit;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.env.Environment;
 
 @SpringBootApplication
 @EnableScheduling
@@ -32,10 +33,15 @@ public class Application {
   @Value("${stripe.url}")
   private String stripeUrl;
 
+  @Value("${spring.application.name}")
+  private String applicationName;
+
   @Bean
-  CommandLineRunner commandLineRunner() {
+  CommandLineRunner commandLineRunner(Environment environment) {
     System.out.println(stripeApiKey);
     System.out.println(stripeUrl);
+    System.out.println(applicationName);
+    System.out.println(environment.getProperty("stripe.api-key"));
     return args -> {
     };
   }
