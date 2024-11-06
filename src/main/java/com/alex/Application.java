@@ -16,14 +16,20 @@ import java.util.Optional;
 
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.scheduling.annotation.EnableAsync;
+import org.springframework.scheduling.annotation.Async;
 import java.util.concurrent.TimeUnit;
 
-@EnableScheduling
 @SpringBootApplication
+@EnableScheduling
+@EnableAsync
 public class Application {
 
   public static void main(String[] args) {
-    ConfigurableApplicationContext context = SpringApplication.run(Application.class, args);
+
+    SpringApplication.run(Application.class, args);
+    // ConfigurableApplicationContext context =
+    // SpringApplication.run(Application.class, args);
 
     // String[] beanDefinitionNames = context.getBeanDefinitionNames();
 
@@ -39,13 +45,15 @@ public class Application {
 
   @Scheduled(fixedRate = 5, timeUnit = TimeUnit.SECONDS // run every 1 minute
   )
+  @Async
   public void sendEmails() throws InterruptedException {
     System.out.println("Start sending emails");
-    Thread.sleep(2000);
+    Thread.sleep(5000);
     System.out.println("End sending emails");
   }
 
   @Scheduled(cron = "*/5 * * * * *")
+  @Async
   public void generateSalesReport() throws InterruptedException {
     System.out.println("Start generating sales report");
     Thread.sleep(5000);
