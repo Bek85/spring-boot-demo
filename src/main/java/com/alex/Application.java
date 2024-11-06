@@ -21,6 +21,7 @@ import org.springframework.scheduling.annotation.Async;
 import java.util.concurrent.TimeUnit;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
+import com.alex.config.StripeConfig;
 
 @SpringBootApplication
 @EnableScheduling
@@ -37,11 +38,12 @@ public class Application {
   private String applicationName;
 
   @Bean
-  CommandLineRunner commandLineRunner(Environment environment) {
+  CommandLineRunner commandLineRunner(Environment environment, StripeConfig stripeConfig) {
     System.out.println(stripeApiKey);
     System.out.println(stripeUrl);
     System.out.println(applicationName);
     System.out.println(environment.getProperty("stripe.api-key"));
+    System.out.println(stripeConfig);
     return args -> {
     };
   }
