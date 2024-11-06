@@ -1,6 +1,6 @@
 spring:
   application:
-    name: spring-boot
+    name: alex-spring-boot
   datasource:
     url: jdbc:postgresql://localhost:5432/spring_jpa
     username: postgres
@@ -40,3 +40,5 @@ server:
   error:
     include-message: always
     include-binding-errors: always
+  servlet:
+    context-path: /api/v1

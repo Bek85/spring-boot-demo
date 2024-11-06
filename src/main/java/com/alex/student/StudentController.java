@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
-@RequestMapping("api/v1/students")
+@RequestMapping("/students")
 public class StudentController {
 
   private final StudentService studentService;

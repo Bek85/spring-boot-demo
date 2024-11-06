@@ -14,7 +14,7 @@ import jakarta.validation.Validator;
 import jakarta.validation.constraints.Positive;
 
 @RestController
-@RequestMapping("/api/v1/people")
+@RequestMapping("/people")
 public class PersonController {
 
   private final PersonService personService;

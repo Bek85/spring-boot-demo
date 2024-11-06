@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/publications")
+@RequestMapping("/publications")
 public class PublicationController {
   private final PublicationService publicationService;
   private final PublicationRepository publicationRepository;
