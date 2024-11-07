@@ -1,33 +1,33 @@
 ###
-GET http://localhost:8081/api/v1/people
+GET http://localhost:8080/api/v1/people
 Content-Type: application/json
 token: "1234"
 
 ###
-GET http://localhost:8081/api/v1/people?sort=DESC
+GET http://localhost:8080/api/v1/people?sort=DESC
 Content-Type: application/json
 
 ###
-GET http://localhost:8081/api/v1/people?sort=DESC&limit=3
+GET http://localhost:8080/api/v1/people?sort=DESC&limit=3
 Content-Type: application/json
 
 ###
-GET http://localhost:8081/api/v1/people?sort=foo
+GET http://localhost:8080/api/v1/people?sort=foo
 Content-Type: application/json
 
 ###
-GET http://localhost:8081/api/v1/people/20
-Content-Type: application/json
-token: "1234"
-
-###
-DELETE http://localhost:8081/api/v1/people/1
+GET http://localhost:8080/api/v1/people/20
 Content-Type: application/json
 token: "1234"
 
+###
+DELETE http://localhost:8080/api/v1/people/1
+Content-Type: application/json
+token: "1234"
+
 
 ###
-POST http://localhost:8081/api/v1/people
+POST http://localhost:8080/api/v1/people
 Content-Type: application/json
 token: "1234"
 
@@ -41,7 +41,7 @@ token: "1234"
 
 
 ###
-PUT http://localhost:8081/api/v1/people/21
+PUT http://localhost:8080/api/v1/people/21
 Content-Type: application/json
 token: "1234"
 
@@ -52,26 +52,26 @@ token: "1234"
 }
 
 ###
-GET http://localhost:8081/api/v1/publications
+GET http://localhost:8080/api/v1/publications
 token: "1234"
 
 
 ###
-GET http://localhost:8081/api/v1/publications/1
+GET http://localhost:8080/api/v1/publications/1
 token: "1234"
 
 ###
-GET http://localhost:8081/api/v1/publications
-token: "1234"
-
-
-###
-GET http://localhost:8081/api/v1/publications/5
+GET http://localhost:8080/api/v1/publications
 token: "1234"
 
 
 ###
-POST http://localhost:8081/api/v1/publications
+GET http://localhost:8080/api/v1/publications/5
+token: "1234"
+
+
+###
+POST http://localhost:8080/api/v1/publications
 Content-Type: application/json
 token: "1234"
 
@@ -83,7 +83,7 @@ token: "1234"
 }
 
 ###
-PUT http://localhost:8081/api/v1/publications/5
+PUT http://localhost:8080/api/v1/publications/5
 Content-Type: application/json
 token: "1234"
 
@@ -92,27 +92,27 @@ token: "1234"
 }
 
 ###
-DELETE http://localhost:8081/api/v1/publications/6
+DELETE http://localhost:8080/api/v1/publications/6
 Content-Type: application/json
 token: "1234"
 
 ###
-GET http://localhost:8081/api/v1/posts
+GET http://localhost:8080/api/v1/posts
 Content-Type: application/json
 
 
 ###
-GET http://localhost:8081/api/v1/posts/345345
+GET http://localhost:8080/api/v1/posts/345345
 Content-Type: application/json
 
 
 ###
-DELETE http://localhost:8081/api/v1/posts/1
+DELETE http://localhost:8080/api/v1/posts/1
 Content-Type: application/json
 
 
 ###
-POST http://localhost:8081/api/v1/posts
+POST http://localhost:8080/api/v1/posts
 Content-Type: application/json
 
 {
@@ -122,7 +122,7 @@ Content-Type: application/json
 }
 
 ###
-PUT http://localhost:8081/api/v1/posts/1
+PUT http://localhost:8080/api/v1/posts/1
 Content-Type: application/json
 
 {
@@ -130,38 +130,38 @@ Content-Type: application/json
 }
 
 ### Get all publications read by person with ID 1
-GET http://localhost:8081/api/v1/people/1/publications
+GET http://localhost:8080/api/v1/people/1/publications
 Content-Type: application/json
 token: "1234"
 
 ### Get all people who have read publication with ID 1
-GET http://localhost:8081/api/v1/people/readers/1
+GET http://localhost:8080/api/v1/people/readers/1
 Content-Type: application/json
 token: "1234"
 
 ### Get people who have read more than 2 publications
-GET http://localhost:8081/api/v1/people/avid-readers?minBooks=2
+GET http://localhost:8080/api/v1/people/avid-readers?minBooks=2
 Content-Type: application/json
 token: "1234"
 
 ### Get all publications read by person with ID 2
-GET http://localhost:8081/api/v1/publications/read-by/1
+GET http://localhost:8080/api/v1/publications/read-by/1
 Content-Type: application/json
 token: "1234"
 
 ### Get publications that have been read by at least 3 people
-GET http://localhost:8081/api/v1/publications/popular?minReaders=3
+GET http://localhost:8080/api/v1/publications/popular?minReaders=3
 Content-Type: application/json
 token: "1234"
 
 
 ### Get all students
-GET http://localhost:8081/api/v1/students
+GET http://localhost:8080/api/v1/students
 Content-Type: application/json
 
 
 ### Add a new student
-POST http://localhost:8081/api/v1/students
+POST http://localhost:8080/api/v1/students
 Content-Type: application/json
 
 {
@@ -172,9 +172,9 @@ Content-Type: application/json
 }
 
 ### Get student by ID
-GET http://localhost:8081/api/v1/students/3
+GET http://localhost:8080/api/v1/students/3
 Content-Type: application/json
 
 ### Get students by first name and age
-GET http://localhost:8081/api/v1/students/query?firstName=Alex&age=38
+GET http://localhost:8080/api/v1/students/query?firstName=Alex&age=38
 Content-Type: application/json

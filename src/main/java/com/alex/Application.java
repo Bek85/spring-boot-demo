@@ -39,6 +39,7 @@ public class Application {
 
   @Bean
   CommandLineRunner commandLineRunner(Environment environment, StripeConfig stripeConfig) {
+
     System.out.println(stripeApiKey);
     System.out.println(stripeUrl);
     System.out.println(applicationName);
