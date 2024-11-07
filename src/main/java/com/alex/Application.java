@@ -49,7 +49,7 @@ public class Application {
   }
 
   public static void main(String[] args) {
-
+    System.setProperty("spring.profiles.active", "demo");
     SpringApplication.run(Application.class, args);
 
     // ConfigurableApplicationContext context =
@@ -62,7 +62,7 @@ public class Application {
     // }
 
     // System.out.println(beanDefinitionNames.length);
-    // System.out.println("Hello World!!!");
+
   }
 
   // add cron expression to run the task every 1 minute
