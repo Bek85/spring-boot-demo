@@ -22,6 +22,8 @@ import java.util.concurrent.TimeUnit;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
 import com.alex.config.StripeConfig;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @SpringBootApplication
 @EnableScheduling
@@ -36,6 +38,8 @@ public class Application {
 
   @Value("${spring.application.name}")
   private String applicationName;
+
+  private final static Logger LOGGER = LoggerFactory.getLogger(Application.class);
 
   @Bean
   CommandLineRunner commandLineRunner(Environment environment, StripeConfig stripeConfig) {
@@ -52,6 +56,11 @@ public class Application {
   public static void main(String[] args) {
     System.setProperty("spring.profiles.active", "demo");
     SpringApplication.run(Application.class, args);
+
+    LOGGER.info("Hello World!!!");
+    LOGGER.debug("Debugging");
+    LOGGER.warn("Warning");
+    LOGGER.error("Error");
 
     // ConfigurableApplicationContext context =
     // SpringApplication.run(Application.class, args);

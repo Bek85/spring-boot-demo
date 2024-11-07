@@ -45,7 +45,7 @@ server:
     context-path: /api/v1
 logging:
   level:
-    root: INFO
+    root: ERROR
     sql: WARN
     org:
       springframework:
