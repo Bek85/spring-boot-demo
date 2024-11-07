@@ -396,3 +396,341 @@ ERROR in net.logstash.logback.appender.LogstashTcpSocketAppender[JSON] - No dest
 2024-11-07 11:03:21 [restartedMain] INFO  com.alex.Application - Hello World!!!
 2024-11-07 11:03:21 [restartedMain] WARN  com.alex.Application - Warning
 2024-11-07 11:03:21 [restartedMain] ERROR com.alex.Application - Error
+2024-11-07 11:07:47 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-11-07 11:07:47 [Thread-24] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2024-11-07 11:07:47 [Thread-24] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-07 11:07:47 [Thread-24] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Shutdown initiated...
+2024-11-07 11:07:47 [Thread-24] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Shutdown completed.
+2024-11-07 11:07:47 [restartedMain] INFO  com.alex.Application - Starting Application using Java 22 with PID 8780 (D:\alex\backend\spring-boot\target\classes started by user in D:\alex\backend\spring-boot)
+2024-11-07 11:07:47 [restartedMain] INFO  com.alex.Application - The following 1 profile is active: "demo"
+2024-11-07 11:07:47 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-07 11:07:47 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14 ms. Found 3 JPA repository interfaces.
+2024-11-07 11:07:48 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-11-07 11:07:48 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-11-07 11:07:48 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-11-07 11:07:48 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-11-07 11:07:48 [restartedMain] INFO  o.a.c.c.C.[.[localhost].[/api/v1] - Initializing Spring embedded WebApplicationContext
+2024-11-07 11:07:48 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 288 ms
+2024-11-07 11:07:48 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Starting...
+2024-11-07 11:07:48 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-6 - Added connection org.postgresql.jdbc.PgConnection@7047ec09
+2024-11-07 11:07:48 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Start completed.
+2024-11-07 11:07:48 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/spring_jpa'
+2024-11-07 11:07:48 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-07 11:07:48 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-11-07 11:07:48 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-07 11:07:48 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-07 11:07:48 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-07 11:07:48 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-07 11:07:48 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-11-07 11:07:48 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-11-07 11:07:48 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/api/v1'
+2024-11-07 11:07:48 [restartedMain] INFO  com.alex.Application - Started Application in 0.671 seconds (process running for 868.669)
+2024-11-07 11:07:48 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2024-11-07 11:07:48 [restartedMain] INFO  com.alex.Application - Hello World!!!
+2024-11-07 11:07:48 [restartedMain] WARN  com.alex.Application - Warning
+2024-11-07 11:07:48 [restartedMain] ERROR com.alex.Application - Error
+2024-11-07 11:08:13 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-11-07 11:08:13 [Thread-28] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2024-11-07 11:08:13 [Thread-28] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-07 11:08:13 [Thread-28] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Shutdown initiated...
+2024-11-07 11:08:13 [Thread-28] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Shutdown completed.
+2024-11-07 11:08:13 [restartedMain] INFO  com.alex.Application - Starting Application using Java 22 with PID 8780 (D:\alex\backend\spring-boot\target\classes started by user in D:\alex\backend\spring-boot)
+2024-11-07 11:08:13 [restartedMain] INFO  com.alex.Application - The following 1 profile is active: "demo"
+2024-11-07 11:08:13 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-07 11:08:13 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 16 ms. Found 3 JPA repository interfaces.
+2024-11-07 11:08:13 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-11-07 11:08:13 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-11-07 11:08:13 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-11-07 11:08:13 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-11-07 11:08:13 [restartedMain] INFO  o.a.c.c.C.[.[localhost].[/api/v1] - Initializing Spring embedded WebApplicationContext
+2024-11-07 11:08:13 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 238 ms
+2024-11-07 11:08:13 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Starting...
+2024-11-07 11:08:13 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-7 - Added connection org.postgresql.jdbc.PgConnection@2022780e
+2024-11-07 11:08:13 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Start completed.
+2024-11-07 11:08:13 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/spring_jpa'
+2024-11-07 11:08:13 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-07 11:08:13 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-11-07 11:08:13 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-07 11:08:13 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-07 11:08:13 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-07 11:08:14 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-07 11:08:14 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-11-07 11:08:14 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-11-07 11:08:14 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/api/v1'
+2024-11-07 11:08:14 [restartedMain] INFO  com.alex.Application - Started Application in 0.76 seconds (process running for 894.301)
+2024-11-07 11:08:14 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2024-11-07 11:08:14 [restartedMain] INFO  com.alex.Application - Hello World!!!
+2024-11-07 11:08:14 [restartedMain] WARN  com.alex.Application - Warning
+2024-11-07 11:08:14 [restartedMain] ERROR com.alex.Application - Error
+2024-11-07 11:09:35 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-11-07 11:09:35 [Thread-32] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2024-11-07 11:09:35 [Thread-32] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-07 11:09:35 [Thread-32] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Shutdown initiated...
+2024-11-07 11:09:35 [Thread-32] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Shutdown completed.
+2024-11-07 11:09:35 [restartedMain] INFO  com.alex.Application [null] - Starting Application using Java 22 with PID 8780 (D:\alex\backend\spring-boot\target\classes started by user in D:\alex\backend\spring-boot)
+2024-11-07 11:09:35 [restartedMain] INFO  com.alex.Application [null] - The following 1 profile is active: "demo"
+2024-11-07 11:09:35 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate [null] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-07 11:09:35 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate [null] - Finished Spring Data repository scanning in 10 ms. Found 3 JPA repository interfaces.
+2024-11-07 11:09:35 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer [null] - Tomcat initialized with port 8080 (http)
+2024-11-07 11:09:35 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol [null] - Initializing ProtocolHandler ["http-nio-8080"]
+2024-11-07 11:09:35 [restartedMain] INFO  o.a.catalina.core.StandardService [null] - Starting service [Tomcat]
+2024-11-07 11:09:35 [restartedMain] INFO  o.a.catalina.core.StandardEngine [null] - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-11-07 11:09:35 [restartedMain] INFO  o.a.c.c.C.[.[localhost].[/api/v1] [null] - Initializing Spring embedded WebApplicationContext
+2024-11-07 11:09:35 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext [null] - Root WebApplicationContext: initialization completed in 243 ms
+2024-11-07 11:09:35 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource [null] - HikariPool-8 - Starting...
+2024-11-07 11:09:35 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool [null] - HikariPool-8 - Added connection org.postgresql.jdbc.PgConnection@6d807a92
+2024-11-07 11:09:35 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource [null] - HikariPool-8 - Start completed.
+2024-11-07 11:09:35 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration [null] - H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/spring_jpa'
+2024-11-07 11:09:35 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper [null] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-07 11:09:35 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator [null] - HHH000026: Second-level cache disabled
+2024-11-07 11:09:35 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo [null] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-07 11:09:35 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator [null] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-07 11:09:35 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean [null] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-07 11:09:35 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [null] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-07 11:09:35 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer [null] - LiveReload server is running on port 35729
+2024-11-07 11:09:35 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol [null] - Starting ProtocolHandler ["http-nio-8080"]
+2024-11-07 11:09:35 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer [null] - Tomcat started on port 8080 (http) with context path '/api/v1'
+2024-11-07 11:09:35 [restartedMain] INFO  com.alex.Application [null] - Started Application in 0.635 seconds (process running for 975.924)
+2024-11-07 11:09:35 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener [null] - Condition evaluation unchanged
+2024-11-07 11:09:35 [restartedMain] INFO  com.alex.Application [null] - Hello World!!!
+2024-11-07 11:09:35 [restartedMain] WARN  com.alex.Application [null] - Warning
+2024-11-07 11:09:35 [restartedMain] ERROR com.alex.Application [null] - Error
+2024-11-07 11:11:32 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener [null] - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-11-07 11:11:32 [Thread-36] INFO  o.a.coyote.http11.Http11NioProtocol [null] - Stopping ProtocolHandler ["http-nio-8080"]
+2024-11-07 11:11:32 [Thread-36] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean [null] - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-07 11:11:32 [Thread-36] INFO  com.zaxxer.hikari.HikariDataSource [null] - HikariPool-8 - Shutdown initiated...
+2024-11-07 11:11:32 [Thread-36] INFO  com.zaxxer.hikari.HikariDataSource [null] - HikariPool-8 - Shutdown completed.
+2024-11-07 11:11:32 [restartedMain] INFO  com.alex.Application [null] [null] - Starting Application using Java 22 with PID 8780 (D:\alex\backend\spring-boot\target\classes started by user in D:\alex\backend\spring-boot)
+2024-11-07 11:11:32 [restartedMain] INFO  com.alex.Application [null] [null] - The following 1 profile is active: "demo"
+2024-11-07 11:11:32 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate [null] [null] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-07 11:11:32 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate [null] [null] - Finished Spring Data repository scanning in 7 ms. Found 3 JPA repository interfaces.
+2024-11-07 11:11:32 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer [null] [null] - Tomcat initialized with port 8080 (http)
+2024-11-07 11:11:32 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol [null] [null] - Initializing ProtocolHandler ["http-nio-8080"]
+2024-11-07 11:11:32 [restartedMain] INFO  o.a.catalina.core.StandardService [null] [null] - Starting service [Tomcat]
+2024-11-07 11:11:32 [restartedMain] INFO  o.a.catalina.core.StandardEngine [null] [null] - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-11-07 11:11:32 [restartedMain] INFO  o.a.c.c.C.[.[localhost].[/api/v1] [null] [null] - Initializing Spring embedded WebApplicationContext
+2024-11-07 11:11:32 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext [null] [null] - Root WebApplicationContext: initialization completed in 198 ms
+2024-11-07 11:11:32 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource [null] [null] - HikariPool-9 - Starting...
+2024-11-07 11:11:32 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool [null] [null] - HikariPool-9 - Added connection org.postgresql.jdbc.PgConnection@301b6441
+2024-11-07 11:11:32 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource [null] [null] - HikariPool-9 - Start completed.
+2024-11-07 11:11:32 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration [null] [null] - H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/spring_jpa'
+2024-11-07 11:11:32 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper [null] [null] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-07 11:11:32 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator [null] [null] - HHH000026: Second-level cache disabled
+2024-11-07 11:11:32 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo [null] [null] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-07 11:11:32 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator [null] [null] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-07 11:11:32 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean [null] [null] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-07 11:11:32 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [null] [null] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-07 11:11:32 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer [null] [null] - LiveReload server is running on port 35729
+2024-11-07 11:11:32 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol [null] [null] - Starting ProtocolHandler ["http-nio-8080"]
+2024-11-07 11:11:32 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer [null] [null] - Tomcat started on port 8080 (http) with context path '/api/v1'
+2024-11-07 11:11:32 [restartedMain] INFO  com.alex.Application [null] [null] - Started Application in 0.55 seconds (process running for 1092.982)
+2024-11-07 11:11:32 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener [null] [null] - Condition evaluation unchanged
+2024-11-07 11:11:32 [restartedMain] INFO  com.alex.Application [null] [null] - Hello World!!!
+2024-11-07 11:11:32 [restartedMain] WARN  com.alex.Application [null] [null] - Warning
+2024-11-07 11:11:32 [restartedMain] ERROR com.alex.Application [null] [null] - Error
+2024-11-07 11:11:42 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener [null] [null] - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-11-07 11:11:42 [Thread-40] INFO  o.a.coyote.http11.Http11NioProtocol [null] [null] - Stopping ProtocolHandler ["http-nio-8080"]
+2024-11-07 11:11:42 [Thread-40] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean [null] [null] - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-07 11:11:42 [Thread-40] INFO  com.zaxxer.hikari.HikariDataSource [null] [null] - HikariPool-9 - Shutdown initiated...
+2024-11-07 11:11:42 [Thread-40] INFO  com.zaxxer.hikari.HikariDataSource [null] [null] - HikariPool-9 - Shutdown completed.
+2024-11-07 11:11:42 [restartedMain] INFO  com.alex.Application - Starting Application using Java 22 with PID 8780 (D:\alex\backend\spring-boot\target\classes started by user in D:\alex\backend\spring-boot)
+2024-11-07 11:11:42 [restartedMain] INFO  com.alex.Application - The following 1 profile is active: "demo"
+2024-11-07 11:11:42 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-07 11:11:42 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 7 ms. Found 3 JPA repository interfaces.
+2024-11-07 11:11:42 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-11-07 11:11:42 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-11-07 11:11:42 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-11-07 11:11:42 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-11-07 11:11:42 [restartedMain] INFO  o.a.c.c.C.[.[localhost].[/api/v1] - Initializing Spring embedded WebApplicationContext
+2024-11-07 11:11:42 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 182 ms
+2024-11-07 11:11:42 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-10 - Starting...
+2024-11-07 11:11:42 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-10 - Added connection org.postgresql.jdbc.PgConnection@2d35853c
+2024-11-07 11:11:42 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-10 - Start completed.
+2024-11-07 11:11:42 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/spring_jpa'
+2024-11-07 11:11:42 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-07 11:11:42 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-11-07 11:11:42 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-07 11:11:42 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-07 11:11:42 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-07 11:11:42 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-07 11:11:43 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-11-07 11:11:43 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-11-07 11:11:43 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/api/v1'
+2024-11-07 11:11:43 [restartedMain] INFO  com.alex.Application - Started Application in 0.664 seconds (process running for 1103.269)
+2024-11-07 11:11:43 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2024-11-07 11:11:43 [restartedMain] INFO  com.alex.Application - Hello World!!!
+2024-11-07 11:11:43 [restartedMain] WARN  com.alex.Application - Warning
+2024-11-07 11:11:43 [restartedMain] ERROR com.alex.Application - Error
+2024-11-07 11:12:19 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-11-07 11:12:19 [Thread-44] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2024-11-07 11:12:19 [Thread-44] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-07 11:12:19 [Thread-44] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-10 - Shutdown initiated...
+2024-11-07 11:12:19 [Thread-44] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-10 - Shutdown completed.
+2024-11-07 11:12:19 [restartedMain] ERROR [%PARSER_ERROR[springProfile]] o.s.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.pattern.parser.Compiler@3127c45c - There is no conversion class registered for conversion word [springProfile]
+ERROR in ch.qos.logback.core.pattern.parser.Compiler@3127c45c - [springProfile] is not a valid conversion word
+ERROR in ch.qos.logback.core.pattern.parser.Compiler@4c7f59b9 - There is no conversion class registered for conversion word [springProfile]
+ERROR in ch.qos.logback.core.pattern.parser.Compiler@4c7f59b9 - [springProfile] is not a valid conversion word
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:347)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:298)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:246)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:223)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:185)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:178)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:156)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:138)
+	at org.springframework.boot.context.event.EventPublishingRunListener.multicastInitialEvent(EventPublishingRunListener.java:136)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:81)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:64)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:118)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:112)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:63)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:370)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:330)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.alex.Application.main(Application.java:58)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.pattern.parser.Compiler@3127c45c - There is no conversion class registered for conversion word [springProfile]
+ERROR in ch.qos.logback.core.pattern.parser.Compiler@3127c45c - [springProfile] is not a valid conversion word
+ERROR in ch.qos.logback.core.pattern.parser.Compiler@4c7f59b9 - There is no conversion class registered for conversion word [springProfile]
+ERROR in ch.qos.logback.core.pattern.parser.Compiler@4c7f59b9 - [springProfile] is not a valid conversion word
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.reportConfigurationErrorsIfNecessary(LogbackLoggingSystem.java:284)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:262)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:81)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:61)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:193)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:332)
+	... 22 common frames omitted
+2024-11-07 11:13:30 [restartedMain] INFO  [demo] com.alex.Application - Starting Application using Java 22 with PID 8780 (D:\alex\backend\spring-boot\target\classes started by user in D:\alex\backend\spring-boot)
+2024-11-07 11:13:30 [restartedMain] INFO  [demo] com.alex.Application - The following 1 profile is active: "demo"
+2024-11-07 11:13:30 [restartedMain] INFO  [demo] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-07 11:13:30 [restartedMain] INFO  [demo] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 3 JPA repository interfaces.
+2024-11-07 11:13:31 [restartedMain] INFO  [demo] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-11-07 11:13:31 [restartedMain] INFO  [demo] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-11-07 11:13:31 [restartedMain] INFO  [demo] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-11-07 11:13:31 [restartedMain] INFO  [demo] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-11-07 11:13:31 [restartedMain] INFO  [demo] o.a.c.c.C.[.[localhost].[/api/v1] - Initializing Spring embedded WebApplicationContext
+2024-11-07 11:13:31 [restartedMain] INFO  [demo] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 216 ms
+2024-11-07 11:13:31 [restartedMain] INFO  [demo] com.zaxxer.hikari.HikariDataSource - HikariPool-11 - Starting...
+2024-11-07 11:13:31 [restartedMain] INFO  [demo] com.zaxxer.hikari.pool.HikariPool - HikariPool-11 - Added connection org.postgresql.jdbc.PgConnection@7202f8fa
+2024-11-07 11:13:31 [restartedMain] INFO  [demo] com.zaxxer.hikari.HikariDataSource - HikariPool-11 - Start completed.
+2024-11-07 11:13:31 [restartedMain] INFO  [demo] o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/spring_jpa'
+2024-11-07 11:13:31 [restartedMain] INFO  [demo] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-07 11:13:31 [restartedMain] INFO  [demo] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-11-07 11:13:31 [restartedMain] INFO  [demo] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-07 11:13:31 [restartedMain] INFO  [demo] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-07 11:13:31 [restartedMain] INFO  [demo] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-07 11:13:31 [restartedMain] WARN  [demo] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-07 11:13:31 [restartedMain] INFO  [demo] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-11-07 11:13:31 [restartedMain] INFO  [demo] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-11-07 11:13:31 [restartedMain] INFO  [demo] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/api/v1'
+2024-11-07 11:13:31 [restartedMain] INFO  [demo] com.alex.Application - Started Application in 0.551 seconds (process running for 1211.589)
+2024-11-07 11:13:31 [restartedMain] INFO  [demo] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2024-11-07 11:13:31 [restartedMain] INFO  [demo] com.alex.Application - Hello World!!!
+2024-11-07 11:13:31 [restartedMain] WARN  [demo] com.alex.Application - Warning
+2024-11-07 11:13:31 [restartedMain] ERROR [demo] com.alex.Application - Error
+2024-11-07 11:14:27 [File Watcher] INFO  [demo] o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-11-07 11:14:27 [Thread-48] INFO  [demo] o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2024-11-07 11:14:27 [Thread-48] INFO  [demo] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-07 11:14:27 [Thread-48] INFO  [demo] com.zaxxer.hikari.HikariDataSource - HikariPool-11 - Shutdown initiated...
+2024-11-07 11:14:27 [Thread-48] INFO  [demo] com.zaxxer.hikari.HikariDataSource - HikariPool-11 - Shutdown completed.
+2024-11-07 11:14:27 [restartedMain] INFO  [alex-spring-boot-demo] com.alex.Application - Starting Application using Java 22 with PID 8780 (D:\alex\backend\spring-boot\target\classes started by user in D:\alex\backend\spring-boot)
+2024-11-07 11:14:27 [restartedMain] INFO  [alex-spring-boot-demo] com.alex.Application - The following 1 profile is active: "demo"
+2024-11-07 11:14:27 [restartedMain] INFO  [alex-spring-boot-demo] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-07 11:14:27 [restartedMain] INFO  [alex-spring-boot-demo] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 7 ms. Found 3 JPA repository interfaces.
+2024-11-07 11:14:28 [restartedMain] INFO  [alex-spring-boot-demo] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-11-07 11:14:28 [restartedMain] INFO  [alex-spring-boot-demo] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-11-07 11:14:28 [restartedMain] INFO  [alex-spring-boot-demo] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-11-07 11:14:28 [restartedMain] INFO  [alex-spring-boot-demo] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-11-07 11:14:28 [restartedMain] INFO  [alex-spring-boot-demo] o.a.c.c.C.[.[localhost].[/api/v1] - Initializing Spring embedded WebApplicationContext
+2024-11-07 11:14:28 [restartedMain] INFO  [alex-spring-boot-demo] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 166 ms
+2024-11-07 11:14:28 [restartedMain] INFO  [alex-spring-boot-demo] com.zaxxer.hikari.HikariDataSource - HikariPool-12 - Starting...
+2024-11-07 11:14:28 [restartedMain] INFO  [alex-spring-boot-demo] com.zaxxer.hikari.pool.HikariPool - HikariPool-12 - Added connection org.postgresql.jdbc.PgConnection@5e0ff48c
+2024-11-07 11:14:28 [restartedMain] INFO  [alex-spring-boot-demo] com.zaxxer.hikari.HikariDataSource - HikariPool-12 - Start completed.
+2024-11-07 11:14:28 [restartedMain] INFO  [alex-spring-boot-demo] o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/spring_jpa'
+2024-11-07 11:14:28 [restartedMain] INFO  [alex-spring-boot-demo] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-07 11:14:28 [restartedMain] INFO  [alex-spring-boot-demo] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-11-07 11:14:28 [restartedMain] INFO  [alex-spring-boot-demo] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-07 11:14:28 [restartedMain] INFO  [alex-spring-boot-demo] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-07 11:14:28 [restartedMain] INFO  [alex-spring-boot-demo] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-07 11:14:28 [restartedMain] WARN  [alex-spring-boot-demo] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-07 11:14:28 [restartedMain] INFO  [alex-spring-boot-demo] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-11-07 11:14:28 [restartedMain] INFO  [alex-spring-boot-demo] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-11-07 11:14:28 [restartedMain] INFO  [alex-spring-boot-demo] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/api/v1'
+2024-11-07 11:14:28 [restartedMain] INFO  [alex-spring-boot-demo] com.alex.Application - Started Application in 0.533 seconds (process running for 1268.6)
+2024-11-07 11:14:28 [restartedMain] INFO  [alex-spring-boot-demo] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2024-11-07 11:14:28 [restartedMain] INFO  [alex-spring-boot-demo] com.alex.Application - Hello World!!!
+2024-11-07 11:14:28 [restartedMain] WARN  [alex-spring-boot-demo] com.alex.Application - Warning
+2024-11-07 11:14:28 [restartedMain] ERROR [alex-spring-boot-demo] com.alex.Application - Error
+2024-11-07 11:14:49 [File Watcher] INFO  [alex-spring-boot-demo] o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-11-07 11:14:49 [Thread-54] INFO  [alex-spring-boot-demo] o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2024-11-07 11:14:49 [Thread-54] INFO  [alex-spring-boot-demo] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-07 11:14:49 [Thread-54] INFO  [alex-spring-boot-demo] com.zaxxer.hikari.HikariDataSource - HikariPool-12 - Shutdown initiated...
+2024-11-07 11:14:49 [Thread-54] INFO  [alex-spring-boot-demo] com.zaxxer.hikari.HikariDataSource - HikariPool-12 - Shutdown completed.
+2024-11-07 11:14:49 [restartedMain] INFO  [alex-spring-boot-prod] com.alex.Application - Starting Application using Java 22 with PID 8780 (D:\alex\backend\spring-boot\target\classes started by user in D:\alex\backend\spring-boot)
+2024-11-07 11:14:49 [restartedMain] INFO  [alex-spring-boot-prod] com.alex.Application - The following 1 profile is active: "prod"
+2024-11-07 11:14:49 [restartedMain] INFO  [alex-spring-boot-prod] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-07 11:14:49 [restartedMain] INFO  [alex-spring-boot-prod] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 6 ms. Found 3 JPA repository interfaces.
+2024-11-07 11:14:49 [restartedMain] INFO  [alex-spring-boot-prod] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-11-07 11:14:49 [restartedMain] INFO  [alex-spring-boot-prod] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-11-07 11:14:49 [restartedMain] INFO  [alex-spring-boot-prod] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-11-07 11:14:49 [restartedMain] INFO  [alex-spring-boot-prod] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-11-07 11:14:49 [restartedMain] INFO  [alex-spring-boot-prod] o.a.c.c.C.[.[localhost].[/api/v1] - Initializing Spring embedded WebApplicationContext
+2024-11-07 11:14:49 [restartedMain] INFO  [alex-spring-boot-prod] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 181 ms
+2024-11-07 11:14:49 [restartedMain] INFO  [alex-spring-boot-prod] com.zaxxer.hikari.HikariDataSource - HikariPool-13 - Starting...
+2024-11-07 11:14:49 [restartedMain] INFO  [alex-spring-boot-prod] com.zaxxer.hikari.pool.HikariPool - HikariPool-13 - Added connection org.postgresql.jdbc.PgConnection@58d6b051
+2024-11-07 11:14:49 [restartedMain] INFO  [alex-spring-boot-prod] com.zaxxer.hikari.HikariDataSource - HikariPool-13 - Start completed.
+2024-11-07 11:14:49 [restartedMain] INFO  [alex-spring-boot-prod] o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/spring_jpa'
+2024-11-07 11:14:49 [restartedMain] INFO  [alex-spring-boot-prod] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-07 11:14:49 [restartedMain] INFO  [alex-spring-boot-prod] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-11-07 11:14:49 [restartedMain] INFO  [alex-spring-boot-prod] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-07 11:14:49 [restartedMain] WARN  [alex-spring-boot-prod] org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-11-07 11:14:49 [restartedMain] INFO  [alex-spring-boot-prod] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-07 11:14:49 [restartedMain] INFO  [alex-spring-boot-prod] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-07 11:14:49 [restartedMain] WARN  [alex-spring-boot-prod] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-07 11:14:49 [restartedMain] INFO  [alex-spring-boot-prod] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-11-07 11:14:49 [restartedMain] INFO  [alex-spring-boot-prod] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-11-07 11:14:49 [restartedMain] INFO  [alex-spring-boot-prod] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/api/v1'
+2024-11-07 11:14:49 [restartedMain] INFO  [alex-spring-boot-prod] com.alex.Application - Started Application in 0.551 seconds (process running for 1290.009)
+2024-11-07 11:14:49 [restartedMain] INFO  [alex-spring-boot-prod] com.alex.Application - Hello World!!!
+2024-11-07 11:14:49 [restartedMain] WARN  [alex-spring-boot-prod] com.alex.Application - Warning
+2024-11-07 11:14:49 [restartedMain] ERROR [alex-spring-boot-prod] com.alex.Application - Error
+2024-11-07 11:14:57 [File Watcher] INFO  [alex-spring-boot-prod] o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-11-07 11:14:57 [Thread-58] INFO  [alex-spring-boot-prod] o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2024-11-07 11:14:57 [Thread-58] INFO  [alex-spring-boot-prod] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-07 11:14:57 [Thread-58] INFO  [alex-spring-boot-prod] com.zaxxer.hikari.HikariDataSource - HikariPool-13 - Shutdown initiated...
+2024-11-07 11:14:57 [Thread-58] INFO  [alex-spring-boot-prod] com.zaxxer.hikari.HikariDataSource - HikariPool-13 - Shutdown completed.
+2024-11-07 11:14:57 [restartedMain] INFO  [alex-spring-boot-demo] com.alex.Application - Starting Application using Java 22 with PID 8780 (D:\alex\backend\spring-boot\target\classes started by user in D:\alex\backend\spring-boot)
+2024-11-07 11:14:57 [restartedMain] INFO  [alex-spring-boot-demo] com.alex.Application - The following 1 profile is active: "demo"
+2024-11-07 11:14:57 [restartedMain] INFO  [alex-spring-boot-demo] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-07 11:14:57 [restartedMain] INFO  [alex-spring-boot-demo] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 6 ms. Found 3 JPA repository interfaces.
+2024-11-07 11:14:57 [restartedMain] INFO  [alex-spring-boot-demo] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-11-07 11:14:57 [restartedMain] INFO  [alex-spring-boot-demo] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-11-07 11:14:57 [restartedMain] INFO  [alex-spring-boot-demo] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-11-07 11:14:57 [restartedMain] INFO  [alex-spring-boot-demo] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-11-07 11:14:57 [restartedMain] INFO  [alex-spring-boot-demo] o.a.c.c.C.[.[localhost].[/api/v1] - Initializing Spring embedded WebApplicationContext
+2024-11-07 11:14:57 [restartedMain] INFO  [alex-spring-boot-demo] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 176 ms
+2024-11-07 11:14:57 [restartedMain] INFO  [alex-spring-boot-demo] com.zaxxer.hikari.HikariDataSource - HikariPool-14 - Starting...
+2024-11-07 11:14:57 [restartedMain] INFO  [alex-spring-boot-demo] com.zaxxer.hikari.pool.HikariPool - HikariPool-14 - Added connection org.postgresql.jdbc.PgConnection@1dca8203
+2024-11-07 11:14:57 [restartedMain] INFO  [alex-spring-boot-demo] com.zaxxer.hikari.HikariDataSource - HikariPool-14 - Start completed.
+2024-11-07 11:14:57 [restartedMain] INFO  [alex-spring-boot-demo] o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/spring_jpa'
+2024-11-07 11:14:57 [restartedMain] INFO  [alex-spring-boot-demo] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-07 11:14:57 [restartedMain] INFO  [alex-spring-boot-demo] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-11-07 11:14:57 [restartedMain] INFO  [alex-spring-boot-demo] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-07 11:14:57 [restartedMain] INFO  [alex-spring-boot-demo] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-07 11:14:57 [restartedMain] INFO  [alex-spring-boot-demo] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-07 11:14:57 [restartedMain] WARN  [alex-spring-boot-demo] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-07 11:14:57 [restartedMain] INFO  [alex-spring-boot-demo] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-11-07 11:14:57 [restartedMain] INFO  [alex-spring-boot-demo] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-11-07 11:14:57 [restartedMain] INFO  [alex-spring-boot-demo] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/api/v1'
+2024-11-07 11:14:57 [restartedMain] INFO  [alex-spring-boot-demo] com.alex.Application - Started Application in 0.499 seconds (process running for 1298.103)
+2024-11-07 11:14:57 [restartedMain] INFO  [alex-spring-boot-demo] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2024-11-07 11:14:57 [restartedMain] INFO  [alex-spring-boot-demo] com.alex.Application - Hello World!!!
+2024-11-07 11:14:57 [restartedMain] WARN  [alex-spring-boot-demo] com.alex.Application - Warning
+2024-11-07 11:14:57 [restartedMain] ERROR [alex-spring-boot-demo] com.alex.Application - Error
