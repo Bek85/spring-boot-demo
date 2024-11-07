@@ -19,8 +19,12 @@
 			</pattern>
 		</encoder>
 	</appender>
+	<appender name="JSON" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder class="net.logstash.logback.encoder.LogstashEncoder" />
+	</appender>
 	<root level="INFO">
 		<appender-ref ref="STDOUT" />
+		<!-- <appender-ref ref="JSON" /> -->
 		<appender-ref ref="FILE" />
 	</root>
 </configuration>
